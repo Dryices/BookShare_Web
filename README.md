@@ -17,7 +17,7 @@
 - [ ] Photos and/or video files upload with update to SQL database
 - [ ] Quick Internal Search (Use of SQL)
 - [ ] Contact us or feedback from user stored to SQL database
-- [ ] Management of data (CRUD) stored to SQL database e.g. create, read, update and delete of user accounts, announcements etc.
+- [ ] Management of data (CRUD) stored to SQL database e.g. create, read, update and delete of user accounts,announcements etc.
 - [ ] Discussion Forum, Comments, Blog
 - [ ] Integration with mini-project from other module e.g. MAD. MAPP etc.
 
