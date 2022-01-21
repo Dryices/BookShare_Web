@@ -1,4 +1,5 @@
 # Basic Features (15%) (All?)
+
 - [ ] Home Page - logo, contact, search, FAQs, services, login, sign-in etc.
 - [ ] Footer Page - about us, contact,forum, profiles etc.
 - [ ] About us page - company profile, address, map location
