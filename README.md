@@ -1,3 +1,7 @@
+# CSAD Project
+- Project URL: http://localhost/CSAD-Project/
+- Index File: index.php
+
 # Basic Features (15%) (All?)
 
 - [ ] Home Page - logo, contact, search, FAQs, services, login, sign-in etc.
