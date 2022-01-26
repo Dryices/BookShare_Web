@@ -60,7 +60,7 @@ body{
   z-index: 12;
 }
 .container .cover::after{
-  opacity: 0.3;
+  opacity: 0.05;
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
@@ -85,7 +85,7 @@ body{
 .cover .text .text-2{
   font-size: 26px;
   font-weight: 600;
-  color: #fff;
+  color: #fff; 
   text-align: center;
 }
 .cover .text .text-2{

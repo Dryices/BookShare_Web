@@ -9,19 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-<body>
-  <div class="container">
+<body >
+  <div class="container" >
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="assets/img/frontImg.jpg" alt="">
+        <img src="assets/img/books.png" alt="">
         <div class="text">
           <span class="text-1"> “Nature is painting for us, day after day, pictures of infinite beauty.”<br>-John Ruskin</span>
           <span class="text-2"><br>Let's play our part by reusing books and school materials!</span>
         </div>
       </div>
       <div class="back">
-        <img class="backImg" src="assets/img/backImg.jpg" alt="">
+        <img class="backImg" src="assets/img/trees.png" alt="">
         <div class="text">
           <span class="text-1">Resell your used books and school materials!</span>
           <span class="text-2">Let's get started!</span>
@@ -36,11 +36,11 @@
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input type="text" id="email" name="email" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
@@ -52,22 +52,22 @@
       </div>
         <div class="signup-form">
           <div class="title">Sign Up</div>
-        <form action="#">
+          <form action="connect.php" method='post'>
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Enter your name" required>
+                <input type="text" id='username' name="username" placeholder="Enter your name" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input type="text" id='email' name="email" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" id='password' name="password" placeholder="Enter your password" required>
               </div>
               <div class="button input-box">
-                <input type="submit" value="Submit">
+                <input type="submit" id='submit' name="submit" value="Submit">
               </div>
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
             </div>
