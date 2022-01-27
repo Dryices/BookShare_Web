@@ -57,7 +57,7 @@ mysqli_set_charset($dbc, 'utf8');
 		// Register the user in the database...
 		
 		// Make the query:
-		$q = "INSERT INTO userinfo (username,email,password) VALUES ('$username', '$email', SHA1('$password'))";	
+		$q = "INSERT INTO user_info (username,email,password) VALUES ('$username', '$email', SHA1('$password'))";	
 		$r = @mysqli_query ($dbc, $q); // Run the query.
 		if ($r) { // If it ran OK.
 		
