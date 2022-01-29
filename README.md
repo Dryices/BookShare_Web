@@ -47,8 +47,8 @@
 - [ ] ...
 
 # [Bootstrapmade](https://bootstrapmade.com/)
+[Live Demo] (https://bootstrapmade.com/demo/Moderna/)
 * Template Name: Moderna - v4.8.0
   * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
-
