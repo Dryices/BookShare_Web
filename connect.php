@@ -2,19 +2,14 @@
 // This script performs an INSERT query to add a record to the users table.
 
 $page_title = 'Register';
+include 'db_helper.php';
 //include ('header.html');
 
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PASSWORD', '');
-DEFINE ('DB_HOST', 'localhost');
-DEFINE ('DB_NAME', 'bookshare');
-
 // Make the connection:
-$dbc = @mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ('Could not connect to MySQL: ' . mysqli_connect_error() );
-
+$dbc = OpenCon();
 // Set the encoding...
 mysqli_set_charset($dbc, 'utf8');
 		
@@ -57,8 +52,8 @@ mysqli_set_charset($dbc, 'utf8');
 		// Register the user in the database...
 		
 		// Make the query:
-		$q = "INSERT INTO user_info (username,email,password) VALUES ('$username', '$email', SHA1('$password'))";	
-		$r = @mysqli_query ($dbc, $q); // Run the query.
+                $r = insertAcc($username, $email, $password, $dbc);
+                // Run the query.
 		if ($r) { // If it ran OK.
 		
 			// Print a message:
@@ -76,7 +71,7 @@ mysqli_set_charset($dbc, 'utf8');
 						
 		} // End of if ($r) IF.
 		
-		mysqli_close($dbc); // Close the database connection.
+		CloseCon($dbc); // Close the database connection.
 
 		// Include the footer and quit the script:
 		//include ('includes/footer.html'); 
@@ -93,7 +88,7 @@ mysqli_set_charset($dbc, 'utf8');
 		
 	} // End of if (empty($errors)) IF.
 	
-	mysqli_close($dbc); // Close the database connection.
+	CloseCon($dbc); // Close the database connection.
 
  // End of the main Submit conditional.
 ?>

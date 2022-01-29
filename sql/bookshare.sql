@@ -19,6 +19,7 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `bookshare`
+CREATE DATABASE IF NOT EXISTS bookshare;
 --
 
 -- --------------------------------------------------------
