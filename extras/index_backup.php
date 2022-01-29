@@ -27,7 +27,6 @@
 
 <!-- Template Main CSS File -->
 <link href="assets/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -37,18 +36,36 @@
 <div class="container d-flex justify-content-between align-items-center">
 
 <div class="logo">
-<h1 class="text-light"><a href="index.php"><span>BookShare</span></a></h1>
+<h1 class="text-light"><a href="index.php"><span>Moderna</span></a></h1>
 <!-- Uncomment below if you prefer to use an image logo -->
 <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 </div>
 
 <nav id="navbar" class="navbar">
 <ul>
-<li><a class="active"href="index.php">Home</a></li>
-<li><a href="loginregister.php">Login/Register</a></li>
-<li><a href="blog.php">Blog</a></li>
-<li><a href="team.php">Team</a></li>
+<li><a class="active " href="index.php">Home</a></li>
 <li><a href="about.php">About</a></li>
+<li><a href="services.php">Services</a></li>
+<li><a href="portfolio.php">Portfolio</a></li>
+<li><a href="team.php">Team</a></li>
+<li><a href="blog.php">Blog</a></li>
+<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+<ul>
+<li><a href="#">Drop Down 1</a></li>
+<li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+<ul>
+<li><a href="#">Deep Drop Down 1</a></li>
+<li><a href="#">Deep Drop Down 2</a></li>
+<li><a href="#">Deep Drop Down 3</a></li>
+<li><a href="#">Deep Drop Down 4</a></li>
+<li><a href="#">Deep Drop Down 5</a></li>
+</ul>
+</li>
+<li><a href="#">Drop Down 2</a></li>
+<li><a href="#">Drop Down 3</a></li>
+<li><a href="#">Drop Down 4</a></li>
+</ul>
+</li>
 <li><a href="contact.php">Contact Us</a></li>
 </ul>
 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -64,8 +81,8 @@
 <!-- Slide 1 -->
 <div class="carousel-item active">
 <div class="carousel-container">
-<h2 class="animate__animated animate__fadeInDown">Welcome to <span>BookShare</span></h2>
-<p class="animate__animated animate__fadeInUp">Most students in Singapore use assessment books, course notes or online resources for use in their learning in their educations. <br></p>
+<h2 class="animate__animated animate__fadeInDown">Welcome to <span>Moderna</span></h2>
+<p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
 <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
 </div>
 </div>
@@ -73,9 +90,8 @@
 <!-- Slide 2 -->
 <div class="carousel-item">
 <div class="carousel-container">
-<h2 class="animate__animated animate__fadeInDown">The Issue</h2>
-<p class="animate__animated animate__fadeInUp">Currently pre- and post-secondary institution continue using physical books and notes.<br>
-    The problem is once students finish using these books or notes, they will mostly likely be collecting dust at home while some will be sold or donated to their friends who need it.</p>
+<h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
+<p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
 <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
 </div>
 </div>
@@ -83,8 +99,8 @@
 <!-- Slide 3 -->
 <div class="carousel-item">
 <div class="carousel-container">
-<h2 class="animate__animated animate__fadeInDown">Our goal</h2>
-<p class="animate__animated animate__fadeInUp">  Our platform aim is to reduce paper waste and promote the idea of sharing school materials through selling or donating!</p>
+<h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
+<p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
 <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
 </div>
 </div>
@@ -264,7 +280,7 @@
 <div class="row">
 <div class="col-lg-6">
 <h4>Our Newsletter</h4>
-<p>Get the latest news about our BookShare platform</p>
+<p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
 </div>
 <div class="col-lg-6">
 <form action="" method="post">
@@ -279,14 +295,14 @@
 <div class="container">
 <div class="row">
 
-<div class="col-lg-3 col-md-6 footer-links" href="index.php">
+<div class="col-lg-3 col-md-6 footer-links">
 <h4>Useful Links</h4>
 <ul>
-<li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
-<li><i class="bx bx-chevron-right"></i> <a href="blog.php">Blog</a></li>
-<li><i class="bx bx-chevron-right"></i> <a href="team.php">Team</a></li>
-<li><i class="bx bx-chevron-right"></i> <a href="about.php">About</a></li>
-<li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contact us</a></li>
+<li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+<li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+<li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+<li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+<li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
 </ul>
 </div>
 
@@ -304,18 +320,18 @@
 <div class="col-lg-3 col-md-6 footer-contact">
 <h4>Contact Us</h4>
 <p>
-             Singapore Polytechnic <br>
-             500 Dover Rd, <br>
-             Singapore 139651 <br><br>
-<strong>Phone:</strong> +65 91452848<br>
-<strong>Email:</strong> bookshare_info@gmail.com<br>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+<strong>Phone:</strong> +1 5589 55488 55<br>
+<strong>Email:</strong> info@example.com<br>
 </p>
 
 </div>
 
 <div class="col-lg-3 col-md-6 footer-info">
-<h3>About BookShare</h3>
-<p> Our platform aim is to reduce paper waste and promote the idea of sharing school materials through selling or donating!</p>
+<h3>About Moderna</h3>
+<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
 <div class="social-links mt-3">
 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -330,7 +346,7 @@
 
 <div class="container">
 <div class="copyright">
-        &copy; Copyright <strong><span>BookShare</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
 </div>
 <div class="credits">
 <!-- All the links in the footer should remain intact. -->
