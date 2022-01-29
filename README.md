@@ -13,7 +13,7 @@
 - [ ] Google Map Direction
 - [ ] Embedded video
 
-# Advanced Features (15%) (Minimum 7)
+# Advanced Features (15%) 
 
 - [ ] Dynamic announcements or sales promotion from SQL database
 - [ ] Dynamic image gallery view from SQL database
