@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 27, 2022 at 03:03 AM
+-- Generation Time: Jan 29, 2022 at 03:47 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -19,8 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `bookshare`
-CREATE DATABASE IF NOT EXISTS bookshare;
 --
+CREATE DATABASE IF NOT EXISTS `bookshare` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `bookshare`;
 
 -- --------------------------------------------------------
 
