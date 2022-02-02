@@ -38,7 +38,7 @@
       <div class="logo">
         <h1 class="text-light"><a href="index.html"><span>BookShare</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+       <!--<a href="index.html"><img src="assets/img/usedbooks" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
@@ -79,23 +79,23 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <img src="assets/img/usedbooks_1.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>A platform to list your used school materials</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+             Our platform aim is to reduce paper waste and promote the idea of sharing school materials through selling or donating!
             </p>
             <ul>
-              <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check2-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="bi bi-check2-circle"></i> List your items at a reduced priced or for FREE!</li>
+              <li><i class="bi bi-check2-circle"></i> Save some cash by buying used school material from others!</li>
+              <li><i class="bi bi-check2-circle"></i> All this while saving the environment!</li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+             From 2010 to 2060, the global consumption of pulp and paper is expected to double. The same will the amount of paper waste. An increased paper production will also add further to the pressure on the world’s forests that are already in a critical state - and constantly getting worse.
+             <br>
+             <br>
+From 2001 to 2019, a total of 386 million hectares of forest were lost globally (in all forest types combined). This loss represents an almost 10 % decrease in tree cover since 2000.
             </p>
           </div>
         </div>

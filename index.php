@@ -150,8 +150,10 @@
 
 <div class="row">
 <div class="col-lg-6 video-box">
-<img src="assets/img/why-us.jpg" class="img-fluid" alt="">
-<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+    <br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xThlceHTduw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<br>
 </div>
 
 <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
