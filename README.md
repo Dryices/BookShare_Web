@@ -1,5 +1,5 @@
 # CSAD Project
-- Project URL: http://localhost/CSAD-Project/
+- Project URL: http://localhost/CSAD_Project/
 - Index File: index.php
 
 # Basic Features (15%) (All?)
