@@ -29,7 +29,11 @@ function CloseCon($conn)
 {
     mysqli_close($conn);
 }
+
+//make a function to print or return all results individually i guess
  
+//--------------------user_accounts functions------------------------
+
 function insertAcc($username, $email, $password, $dbc)
 {
     $q = "INSERT INTO user_accounts (username,email,password) VALUES ('$username', '$email', SHA1('$password'))";	
@@ -66,6 +70,52 @@ function getAccFromEmail ($email, $dbc)
 {
     $q = "SELECT * FROM user_accounts WHERE email = '$email'";
     $r = @mysql_query ($dbc, $q);
+    
+    return $r;
+}
+
+//----------------------item_review functions-----------------------
+//not tested
+function insertItemReview ($item_name, $username, $review, $rating, $item_id, $dbc)
+{
+    $q = "INSERT INTO item_review (itemName,username,review,rating,item_id) VALUES ('$item_name', '$username'"
+            . ", '$review', '$rating', '$item_id')";
+    $r = @mysql_query($dbc, $q);
+    
+    return $r;
+}
+
+function getItemReviewByName ($item_name, $dbc)
+{
+    $q = "SELECT * FROM item_review WHERE itemName = '$item_name'";
+    $r = @mysql_query($dbc, $q);
+    
+    return $r;
+}
+
+function getItemReviewByItemID ($item_id, $dbc)
+{
+    $q = "SELECT * FROM item_review WHERE item_id = '$item_id'";
+    $r = @mysql_query($dbc, $q);
+    
+    return $r;
+}
+
+function getItemReviewByUser ($username, $dbc)
+{
+    $q = "SELECT * FROM item_review WHERE username = '$username'";
+    $r = @mysql_query($dbc, $q);
+    
+    return $r;
+}
+
+//--------------------items_list function--------------------------
+
+function insertItem ($itemName, $description, $price, $imageContent, $dbc)
+{
+    $q = "INSERT INTO items_list (itemName, description, price, image) VALUES ('$itemName', '$description', "
+        . "'$price', '$imgContent')"; 
+    $r = @mysql_query($dbc, $q);
     
     return $r;
 }

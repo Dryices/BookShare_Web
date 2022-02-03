@@ -111,9 +111,9 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Wang Da</h4>
+                <h4>Wangda</h4>
                 <span>Database Manager</span>
-                <p>Admin number: <br>Hello</p>
+                <p>Admin number: 2032810<br>Yello</p>
               </div>
             </div>
           </div>
