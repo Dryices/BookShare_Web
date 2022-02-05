@@ -111,10 +111,10 @@ function getItemReviewByUser ($username, $dbc)
 
 //--------------------items_list function--------------------------
 
-function insertItem ($itemName, $description, $price, $imageContent, $dbc)
+function insertItem ($item_name, $description, $price, $image_path, $dbc)
 {
-    $q = "INSERT INTO items_list (itemName, description, price, image) VALUES ('$itemName', '$description', "
-        . "'$price', '$imgContent')"; 
+    $q = "INSERT INTO items_list (item_name, description, price, image_path) VALUES ('$item_name', '$description', "
+        . "'$price', '$image_path')"; 
     $r = @mysql_query($dbc, $q);
     
     return $r;

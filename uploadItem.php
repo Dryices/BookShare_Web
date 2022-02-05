@@ -15,7 +15,7 @@ if(isset($_POST["submit"])){
     }
     else
     {
-        $itemName = mysqli_real_escape_string($dbc, trim($_POST['itemName']));
+        $item_name = mysqli_real_escape_string($dbc, trim($_POST['itemName']));
     }
     
     /*if(empty($_POST["description"]))
@@ -41,16 +41,33 @@ if(isset($_POST["submit"])){
     if(!empty($_FILES["image"]["name"])) { 
         // Get file info 
         $fileName = basename($_FILES["image"]["name"]); 
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-         
+        //set directory to store image in
+        $target_dir = "images/items/";
+        $target_file = $target_dir . $fileName;
+        
+        $fileType = pathinfo($target_file, PATHINFO_EXTENSION); 
+        
+        //stores image in images/items/ folder i think cannot test until have the ui i think
+        //then stores the file path as a string in sql database later
+        if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $target_file)) 
+        {
+            echo "The file ". $fileName . " has been uploaded.";
+        } 
+        else 
+        {
+            echo "Sorry, there was an error uploading your file.";
+        }
         // Allow certain file formats 
+        /*
+        //thiss one is get the image in bytes(i think) then store in sql database as blob
         $allowTypes = array('jpg','png','jpeg','gif'); 
         if(in_array($fileType, $allowTypes)){ 
             $image = $_FILES['image']['tmp_name']; 
             $imgContent = addslashes(file_get_contents($image)); //the thing to upload
         }else{ 
             $errors[] = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
-        } 
+        }
+        */
     }else{ 
         $errors[] = 'Please select an image file to upload.'; 
     }
@@ -58,8 +75,8 @@ if(isset($_POST["submit"])){
 
 if (empty(errors))
 {
-    // Insert image content into database 
-    $r = insertItem($itemName, $description, $price, $imageContent, $dbc);
+    // Insert image path into database 
+    $r = insertItem($item_name, $description, $price, $target_file, $dbc);
     
     if ($r)
     {
@@ -75,8 +92,6 @@ if (empty(errors))
 	// Debugging message:
 	echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
     }
-    
-    
 }
              
 if($r){
@@ -88,8 +103,4 @@ if($r){
 CloseCon($dbc);
 // Display status message 
 echo $statusMsg;
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
 

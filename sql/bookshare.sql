@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 29, 2022 at 03:47 PM
+-- Generation Time: Feb 05, 2022 at 08:23 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -20,8 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `bookshare`
 --
-CREATE DATABASE IF NOT EXISTS `bookshare` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bookshare`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum`
+--
+
+DROP TABLE IF EXISTS `forum`;
+CREATE TABLE IF NOT EXISTS `forum` (
+  `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `category` varchar(20) NOT NULL,
+  `isComment` tinyint(1) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `content` varchar(50000) NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `mainid` mediumint(8) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -32,10 +48,10 @@ USE `bookshare`;
 DROP TABLE IF EXISTS `items_list`;
 CREATE TABLE IF NOT EXISTS `items_list` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `itemName` varchar(100) NOT NULL,
+  `item_name` varchar(100) NOT NULL,
   `description` varchar(1000) NOT NULL,
   `price` float NOT NULL,
-  `image` blob NOT NULL,
+  `image_path` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -49,8 +65,10 @@ DROP TABLE IF EXISTS `item_review`;
 CREATE TABLE IF NOT EXISTS `item_review` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `itemName` varchar(100) NOT NULL,
+  `username` varchar(20) NOT NULL,
   `review` varchar(10000) NOT NULL,
   `rating` float NOT NULL,
+  `item_id` mediumint(8) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -78,18 +96,27 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` char(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_accounts`
+--
+
+-- Passwords are both 12345
+INSERT INTO `user_accounts` (`id`, `username`, `email`, `password`) VALUES
+(1, 'John Doe', 'johndoe12345@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964'),
+(2, 'Marcus Tan', 'marcustan@123.com', '8cb2237d0679ca88db6464eac60da96345513964');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `website_reviews`
+-- Table structure for table `user_ratings`
 --
 
-DROP TABLE IF EXISTS `website_reviews`;
-CREATE TABLE IF NOT EXISTS `website_reviews` (
+DROP TABLE IF EXISTS `user_ratings`;
+CREATE TABLE IF NOT EXISTS `user_ratings` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `comments` varchar(10000) NOT NULL,
