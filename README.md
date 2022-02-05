@@ -2,7 +2,7 @@
 - Project URL: http://localhost/CSAD_Project/
 - Index File: index.php
 
-# Basic Features (15%) (All?)
+# Basic Features (15%) [All]
 
 - [ ] Home Page - logo, contact, search, FAQs, services, login, sign-in etc.
 - [ ] Footer Page - about us, contact,forum, profiles etc.
@@ -13,7 +13,7 @@
 - [ ] Google Map Direction
 - [ ] Embedded video
 
-# Advanced Features (15%) 
+# Advanced Features (15%) [All]
 
 - [ ] Dynamic announcements or sales promotion from SQL database
 - [ ] Dynamic image gallery view from SQL database
@@ -26,7 +26,7 @@
 - [ ] Discussion Forum, Comments, Blog
 - [ ] Integration with mini-project from other module e.g. MAD. MAPP etc.
 
-# Self-Directed Learning and Application (10%) 
+# Self-Directed Learning and Application (10%) [2]
 
 - [ ] Payment System Using PayPal Sandbox
 - [ ] Use of Bootstrap framework
@@ -35,16 +35,6 @@
 # Other Features
 ...
 
-# Team Members Tasks
-
-# Harith:
-- [ ] ...
-
-# Wang Da:
-- [ ] ...
-
-# Tan Yi Quan:
-- [ ] ...
 
 # [Bootstrapmade](https://bootstrapmade.com/)
 [Live Demo] (https://bootstrapmade.com/demo/Moderna/)
