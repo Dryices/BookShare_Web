@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 05, 2022 at 08:23 AM
+-- Generation Time: Feb 06, 2022 at 07:24 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -49,6 +49,8 @@ DROP TABLE IF EXISTS `items_list`;
 CREATE TABLE IF NOT EXISTS `items_list` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `item_name` varchar(100) NOT NULL,
+  `item_type` varchar(50) NOT NULL,
+  `item_category` varchar(50) NOT NULL,
   `description` varchar(1000) NOT NULL,
   `price` float NOT NULL,
   `image_path` varchar(1000) NOT NULL,

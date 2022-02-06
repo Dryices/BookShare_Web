@@ -17,15 +17,31 @@ if(isset($_POST["submit"])){
     {
         $item_name = mysqli_real_escape_string($dbc, trim($_POST['itemName']));
     }
-    
-    /*if(empty($_POST["description"]))
+    if(empty($_POST["type"]))
     {
-        $errors[] = 'Please input description.';
+        $errors[] = 'Please input item type.';
+    }
+    else
+    {
+        $item_name = mysqli_real_escape_string($dbc, trim($_POST['itemName']));
+    }
+    if(empty($_POST["category"]))
+    {
+        $errors[] = 'Please input item category.';
+    }
+    else
+    {
+        $item_name = mysqli_real_escape_string($dbc, trim($_POST['itemName']));
+    }
+    
+    if(empty($_POST["description"]))
+    {
+        $errors[] = 'Please input item description.';
     }
     else
     {
         $description = mysqli_real_escape_string($dbc, trim($_POST['description']));
-    }*/
+    }
     //i dunno if we want the description to be compulsory
     $description = mysqli_real_escape_string($dbc, trim($_POST['description']));
     
@@ -76,7 +92,7 @@ if(isset($_POST["submit"])){
 if (empty(errors))
 {
     // Insert image path into database 
-    $r = insertItem($item_name, $description, $price, $target_file, $dbc);
+    $r = insertItem($item_name, $item_type, $item_category, $description, $price, $target_file, $dbc);
     
     if ($r)
     {

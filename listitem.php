@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>BookShare-Team</title>
+  <title>BookShare-Contact</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,7 +27,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -43,11 +42,11 @@
       </div>
 
       <nav id="navbar" class="navbar">
-      <ul>
+        <ul>
 <li><a class=""href="index.php">Home</a></li>
-<li><a href="listitem.php">List Item</a></li>
+<li><a class="active" href="listitem.php">List Item</a></li>
 <li><a href="forum.php">Forum</a></li>
-<li class="dropdown"><a class="active" href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
+<li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
 <ul>
 <li><a href="team.php">Team</a></li>
 <li><a href="about.php">About Us</a></li>
@@ -64,89 +63,74 @@
 
   <main id="main">
 
-    <!-- ======= Our Team Section ======= -->
+    <!-- ======= Contact Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Our Team</h2>
+          <h2>List item</h2>
           <ol>
-            <li><a class="" href="index.php">Home</a></li>
-            <li>Our Team</li>
+             <li><a class="" href="index.php">Home</a></li>
+            <li>List item</li>
           </ol>
         </div>
 
       </div>
-    </section><!-- End Our Team Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Harith Irfan</h4>
-                <span>Team Leader</span>
-                <p>Admin number: P2032430<br> Hello </p>
-              </div>
-            </div>
+    </section><!-- End Contact Section -->
+     <div class="col-md-6 offset-md-3 mt-5">
+        <form accept-charset="UTF-8" action="uploadItem.php" method="POST"  target="_blank">
+          <div class="formdrop">
+            <label for="itemName">Item name</label>
+            <input type="text" name="itemName" id="itemName" class="form-control" placeholder="Enter listing name" required="required">
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Wangda</h4>
-                <span>Database Manager</span>
-                <p>Admin number: 2032810<br>Yello</p>
-              </div>
-            </div>
+            <br>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" min="0" name="price"  id="price"  class="form-control" placeholder="Enter listing price" required="required">
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Tan Yi Quan</h4>
-                <span>Design Quality Officer</span>
-                <p>Admin number: <br>Hello</p>
-              </div>
-            </div>
+            <br>
+            <div class="form-group">
+            <label for="type">Type</label>
+            <select class="form-control" name="type" id="type" required="required">
+                 <option value="" disabled selected>Select your item type</option>
+              <option value="books">Books / Course notes</option>
+              <option value="uniform">Uniforms</option>
+              <option value="others">Others</option>
+            </select>
           </div>
-        </div>
+            <br>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" name="category" id="category" required="required">
+                 <option value="" disabled selected>Select your item category</option>
+              <option value="primary">Primary School</option>
+              <option value="secondary">Secondary School</option>
+              <option value="post-secondary">Post-Secondary School</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+            <br>
+             <div class="form-group mt-3">
+                 <label for="itemDescription">Item description</label>
+                <textarea type="text" class="form-control" name="description" id="description" rows="5" placeholder="Enter a brief description of the item" required="required"></textarea>
+              </div>
+          <br>
+          <div class="form-group mt-3">
+            <label class="mr-2">Upload an image:</label>
+            <input type="file" accept="image/*" onchange="loadFile(event)" name="image" id="image">
+           <div>
+            <img id="output"/>
+           </div>
+            
+          </div>
+          <br>
+          <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
+        </form>
+         <br>
+    </div> 
+    
 
-      </div>
-    </section><!-- End Team Section -->
-
-  </main><!-- End #main -->
+  
 
   <!-- ======= Footer ======= -->
 <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
@@ -248,7 +232,16 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <!-- For image preview-->
+  <script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
 
 </body>
-
 </html>

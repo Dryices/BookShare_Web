@@ -42,14 +42,19 @@
       </div>
 
       <nav id="navbar" class="navbar">
-        <ul>
-             <li><a class=""href="index.php">Home</a></li>
-<li><a href="loginregister.php">Login/Register</a></li>
-<li><a class="active" href="blog.php">Blog</a></li>
+         <ul>
+<li><a class=""href="index.php">Home</a></li>
+<li><a href="listitem.php">List Item</a></li>
+<li><a class="active" href="forum.php">Forum</a></li>
+<li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
+<ul>
 <li><a href="team.php">Team</a></li>
-<li><a href="about.php">About</a></li>
+<li><a href="about.php">About Us</a></li>
 <li><a href="contact.php">Contact Us</a></li>
-        </ul>
+</ul>
+</li>
+<li><a href="loginregister.php">Login/Register</a></li>
+</ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -66,7 +71,7 @@
           <h2>Blog</h2>
 
           <ol>
-            <li><a href="index.html">Home</a></li>
+             <li><a class="" href="index.php">Home</a></li>
             <li>Blog</li>
           </ol>
         </div>
@@ -325,9 +330,9 @@
 <h4>Useful Links</h4>
 <ul>
 <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
-<li><i class="bx bx-chevron-right"></i> <a href="blog.php">Blog</a></li>
+<li><i class="bx bx-chevron-right"></i> <a href="forum.php">Forum</a></li>
 <li><i class="bx bx-chevron-right"></i> <a href="team.php">Team</a></li>
-<li><i class="bx bx-chevron-right"></i> <a href="about.php">About</a></li>
+<li><i class="bx bx-chevron-right"></i> <a href="about.php">About Us</a></li>
 <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contact us</a></li>
 </ul>
 </div>
