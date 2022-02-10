@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 10, 2022 at 03:06 AM
+-- Generation Time: Feb 10, 2022 at 10:23 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -44,13 +44,22 @@ DROP TABLE IF EXISTS `forum`;
 CREATE TABLE IF NOT EXISTS `forum` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `category` varchar(20) NOT NULL,
+  `title` text NOT NULL,
   `isComment` tinyint(1) NOT NULL,
   `username` varchar(20) NOT NULL,
   `content` varchar(50000) NOT NULL,
   `timestamp` datetime NOT NULL,
   `mainid` mediumint(8) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forum`
+--
+
+INSERT INTO `forum` (`id`, `category`, `title`, `isComment`, `username`, `content`, `timestamp`, `mainid`) VALUES
+(1, 'asdasd', 'Title', 1, 'test', 'advsdvsdbsfb', '2022-02-16 11:39:23', 1),
+(2, 'fhdgjcfgjdc', 'Title2', 1, 'test2', 'dcgmcgbmjcgm', '2022-02-24 11:39:23', 1);
 
 -- --------------------------------------------------------
 
@@ -90,6 +99,21 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
 INSERT INTO `user_accounts` (`id`, `username`, `email`, `password`) VALUES
 (1, 'John Doe', 'johndoe12345@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964'),
 (2, 'Marcus Tan', 'marcustan@123.com', '8cb2237d0679ca88db6464eac60da96345513964');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_info`
+--
+
+DROP TABLE IF EXISTS `user_info`;
+CREATE TABLE IF NOT EXISTS `user_info` (
+  `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` char(30) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
