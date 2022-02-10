@@ -78,7 +78,7 @@
       </div>
     </section><!-- End Contact Section -->
      <div class="col-md-6 offset-md-3 mt-5">
-        <form accept-charset="UTF-8" action="uploadItem.php" method="POST"  target="_blank">
+        <form accept-charset="UTF-8" action="uploadItem.php" method="post" target="_blank" enctype="multipart/form-data">
           <div class="formdrop">
             <label for="itemName">Item name</label>
             <input type="text" name="itemName" id="itemName" class="form-control" placeholder="Enter listing name" required="required">
@@ -96,7 +96,7 @@
           <br>
           <div class="form-group mt-3">
             <label class="mr-2">Upload an image:</label>
-            <input type="file" accept="image/*" onchange="loadFile(event)" name="image" id="image">
+            <input type="file" accept="image/*" onchange="loadFile(event)" name="imageT0Upload" id="imageToUpload">
            <div>
             <img id="output"/>
            </div>
