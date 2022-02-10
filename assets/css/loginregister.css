@@ -70,6 +70,10 @@ body{
   object-fit: cover;
   z-index: 10;
 }
+
+.containers .cover .back .backImg{
+    transform:rotateY(180deg);
+}
 .containers .cover .text{
   position: absolute;
   z-index: 130;

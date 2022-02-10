@@ -32,35 +32,8 @@
 
 <body>
 
-<!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-center header-transparent">
-<div class="container d-flex justify-content-between align-items-center">
-
-<div class="logo">
-<h1 class="text-light"><a href="index.php"><span>BookShare</span></a></h1>
-<!-- Uncomment below if you prefer to use an image logo -->
-<!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-</div>
-
-<nav id="navbar" class="navbar">
-  <ul>
-<li><a class="active"href="index.php">Home</a></li>
-<li><a href="listitem.php">List Item</a></li>
-<li><a href="forum.php">Forum</a></li>
-<li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
-<ul>
-<li><a href="team.php">Team</a></li>
-<li><a href="about.php">About Us</a></li>
-<li><a href="contact.php">Contact Us</a></li>
-</ul>
-</li>
-<li><a href="loginregister.php">Login/Register</a></li>
-</ul>
-<i class="bi bi-list mobile-nav-toggle"></i>
-</nav><!-- .navbar -->
-
-</div>
-</header><!-- End Header -->
+<?php include "header.php";
+?>
 
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex justify-cntent-center align-items-center">
@@ -106,47 +79,44 @@
 </section><!-- End Hero -->
 
 <main id="main">
+ <?php
+            include "db_helper.php";
+  
+            $select = "select * from items_list"; ?>   
+    <form class="d-flex justify-content-center" action="index.php" method="post">
+        <input name="search" type="text" class="d-flex justify-content-center" placeholder="Search">
+        <input type="submit" class="btn btn-primary" value="Search">
+    </form>
 
 <!-- ======= Services Section ======= -->
 <section class="services">
 <div class="container">
 
 <div class="row">
-<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-<div class="icon-box icon-box-pink">
-<div class="icon"><i class="bx bxl-dribbble"></i></div>
-<h4 class="title"><a href="">Lorem Ipsum</a></h4>
-<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-</div>
-</div>
-
-<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-<div class="icon-box icon-box-cyan">
-<div class="icon"><i class="bx bx-file"></i></div>
-<h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-<p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-</div>
-</div>
-
-<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-<div class="icon-box icon-box-green">
-<div class="icon"><i class="bx bx-tachometer"></i></div>
-<h4 class="title"><a href="">Magni Dolores</a></h4>
-<p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-</div>
-</div>
-
-<div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-<div class="icon-box icon-box-blue">
-<div class="icon"><i class="bx bx-world"></i></div>
-<h4 class="title"><a href="">Nemo Enim</a></h4>
-<p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-</div>
-</div>
+     <?php
+     if(isset($_POST['search'])) {
+         $search=$_POST['search'];
+         $select="SELECT * FROM `items_list` WHERE item_name LIKE '%". $search ."%' OR description LIKE '%". $search ."%'";
+     }
+            $conn = OpenCon();
+            $items = mysqli_query($conn, $select);
+            if(mysqli_num_rows($items) > 0){
+                while($rows = mysqli_fetch_array($items, MYSQLI_ASSOC)){ ?>
+    
+    <div class="col-lg-3" data-aos="fade-up">
+    <div class="icon-box icon-box-pink">
+    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+    <h4 class="title"><?php echo $rows['item_name']; ?></h4>
+    <p class="description"><?php echo $rows['description']; ?></p>
+    <p class="description">$<?php echo $rows['price']; ?></p>
+    </div>
+    </div>
+            <?php }} ?>
 
 </div>
 
 </div>
+
 </section><!-- End Services Section -->
 
 <!-- ======= Why Us Section ======= -->
@@ -181,85 +151,7 @@
 </div>
 </section><!-- End Why Us Section -->
 
-<!-- ======= Features Section ======= -->
-<section class="features">
-<div class="container">
 
-<div class="section-title">
-<h2>Features</h2>
-<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-</div>
-
-<div class="row" data-aos="fade-up">
-<div class="col-md-5">
-<img src="assets/img/features-1.svg" class="img-fluid" alt="">
-</div>
-<div class="col-md-7 pt-4">
-<h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-<p class="fst-italic">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-</p>
-<ul>
-<li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-<li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-</ul>
-</div>
-</div>
-
-<div class="row" data-aos="fade-up">
-<div class="col-md-5 order-1 order-md-2">
-<img src="assets/img/features-2.svg" class="img-fluid" alt="">
-</div>
-<div class="col-md-7 pt-5 order-2 order-md-1">
-<h3>Corporis temporibus maiores provident</h3>
-<p class="fst-italic">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-</p>
-<p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                      culpa qui officia deserunt mollit anim id est laborum
-</p>
-</div>
-</div>
-
-<div class="row" data-aos="fade-up">
-<div class="col-md-5">
-<img src="assets/img/features-3.svg" class="img-fluid" alt="">
-</div>
-<div class="col-md-7 pt-5">
-<h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-<p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-<ul>
-<li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-<li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-<li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-</ul>
-</div>
-</div>
-
-<div class="row" data-aos="fade-up">
-<div class="col-md-5 order-1 order-md-2">
-<img src="assets/img/features-4.svg" class="img-fluid" alt="">
-</div>
-<div class="col-md-7 pt-5 order-2 order-md-1">
-<h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-<p class="fst-italic">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-</p>
-<p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                      culpa qui officia deserunt mollit anim id est laborum
-</p>
-</div>
-</div>
-
-</div>
-</section><!-- End Features Section -->
 
 </main><!-- End #main -->
 
