@@ -54,9 +54,9 @@ if(isset($_POST["submit"])){
         $price = mysqli_real_escape_string($dbc, trim($_POST['price']));
     }
     
-    if(!empty($_FILES["image"]["name"])) { 
+    if(!empty($_FILES["imageToUpload"]["name"])) { 
         // Get file info 
-        $fileName = basename($_FILES["image"]["name"]); 
+        $fileName = basename($_FILES["imageToUpload"]["name"]); 
         //set directory to store image in
         $target_dir = "itemImages/";
         $target_file = $target_dir . $fileName;
@@ -65,7 +65,7 @@ if(isset($_POST["submit"])){
         
         //stores image in images/items/ folder i think cannot test until have the ui i think
         //then stores the file path as a string in sql database later
-        if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $target_dir)) 
+        if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_dir)) 
         {
             echo "The file ". $fileName . " has been uploaded.";
         } 
@@ -89,7 +89,7 @@ if(isset($_POST["submit"])){
     }
 }
 
-if (empty(errors))
+if (empty($errors))
 {
     // Insert image path into database 
     $r = insertItem($item_name, $item_type, $item_category, $description, $price, $target_file, $dbc);
@@ -109,14 +109,21 @@ if (empty(errors))
 	echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
     }
 }
+else 
+{
+    foreach ($errors as $value)
+    {
+        echo $value;
+    }
+}
              
-if($r){
+/*if($r){
     $statusMsg = "File uploaded successfully.";
 }else{
     $statusMsg = "File upload failed, please try again.";
-}
+}*/
 
 CloseCon($dbc);
 // Display status message 
-echo $statusMsg;
+//echo $statusMsg;
 
