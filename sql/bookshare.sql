@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 06, 2022 at 07:24 AM
+-- Generation Time: Feb 10, 2022 at 03:06 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `bookshare`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `announcements`
+--
+
+DROP TABLE IF EXISTS `announcements`;
+CREATE TABLE IF NOT EXISTS `announcements` (
+  `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `image` blob NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -49,41 +62,9 @@ DROP TABLE IF EXISTS `items_list`;
 CREATE TABLE IF NOT EXISTS `items_list` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `item_name` varchar(100) NOT NULL,
-  `item_type` varchar(50) NOT NULL,
-  `item_category` varchar(50) NOT NULL,
   `description` varchar(1000) NOT NULL,
   `price` float NOT NULL,
   `image_path` varchar(1000) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `item_review`
---
-
-DROP TABLE IF EXISTS `item_review`;
-CREATE TABLE IF NOT EXISTS `item_review` (
-  `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `itemName` varchar(100) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `review` varchar(10000) NOT NULL,
-  `rating` float NOT NULL,
-  `item_id` mediumint(8) UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `quote_list`
---
-
-DROP TABLE IF EXISTS `quote_list`;
-CREATE TABLE IF NOT EXISTS `quote_list` (
-  `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `image` blob NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -106,7 +87,6 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
 -- Dumping data for table `user_accounts`
 --
 
--- Passwords are both 12345
 INSERT INTO `user_accounts` (`id`, `username`, `email`, `password`) VALUES
 (1, 'John Doe', 'johndoe12345@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964'),
 (2, 'Marcus Tan', 'marcustan@123.com', '8cb2237d0679ca88db6464eac60da96345513964');
@@ -123,6 +103,23 @@ CREATE TABLE IF NOT EXISTS `user_ratings` (
   `name` varchar(20) NOT NULL,
   `comments` varchar(10000) NOT NULL,
   `rating` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_reviews`
+--
+
+DROP TABLE IF EXISTS `user_reviews`;
+CREATE TABLE IF NOT EXISTS `user_reviews` (
+  `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `itemName` varchar(100) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `review` varchar(10000) NOT NULL,
+  `rating` float NOT NULL,
+  `item_id` mediumint(8) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;

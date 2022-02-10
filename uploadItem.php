@@ -58,14 +58,14 @@ if(isset($_POST["submit"])){
         // Get file info 
         $fileName = basename($_FILES["image"]["name"]); 
         //set directory to store image in
-        $target_dir = "images/items/";
+        $target_dir = "itemImages/";
         $target_file = $target_dir . $fileName;
         
         $fileType = pathinfo($target_file, PATHINFO_EXTENSION); 
         
         //stores image in images/items/ folder i think cannot test until have the ui i think
         //then stores the file path as a string in sql database later
-        if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $target_file)) 
+        if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $target_dir)) 
         {
             echo "The file ". $fileName . " has been uploaded.";
         } 
