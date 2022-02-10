@@ -89,27 +89,6 @@
             <input type="number" min="0" name="price"  id="price"  class="form-control" placeholder="Enter listing price" required="required">
           </div>
             <br>
-            <div class="form-group">
-            <label for="type">Type</label>
-            <select class="form-control" name="type" id="type" required="required">
-                 <option value="" disabled selected>Select your item type</option>
-              <option value="books">Books / Course notes</option>
-              <option value="uniform">Uniforms</option>
-              <option value="others">Others</option>
-            </select>
-          </div>
-            <br>
-          <div class="form-group">
-            <label for="category">Category</label>
-            <select class="form-control" name="category" id="category" required="required">
-                 <option value="" disabled selected>Select your item category</option>
-              <option value="primary">Primary School</option>
-              <option value="secondary">Secondary School</option>
-              <option value="post-secondary">Post-Secondary School</option>
-              <option value="others">Others</option>
-            </select>
-          </div>
-            <br>
              <div class="form-group mt-3">
                  <label for="itemDescription">Item description</label>
                 <textarea type="text" class="form-control" name="description" id="description" rows="5" placeholder="Enter a brief description of the item" required="required"></textarea>
