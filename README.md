@@ -5,13 +5,13 @@
 # Basic Features (15%) [All]
 
 - [ ] Home Page - logo, contact, search, FAQs, services, login, sign-in etc.
-- [ ] Footer Page - about us, contact,forum, profiles etc.
-- [ ] About us page - company profile, address, map location
-- [ ] Consistent branding across all pages
+- [x] Footer Page - about us, contact,forum, profiles etc.
+- [x] About us page - company profile, address, map location
+- [x] Consistent branding across all pages
 - [ ] Project Members Portfolio (Photo, Name, Adm No, Profile)
 - [ ] Use of cookies, session
-- [ ] Google Map Direction
-- [ ] Embedded video
+- [x] Google Map Direction
+- [x] Embedded video
 
 # Advanced Features (15%) [All]
 
