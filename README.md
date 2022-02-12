@@ -29,7 +29,7 @@
 # Self-Directed Learning and Application (10%) [2]
 
 - [ ] Payment System Using PayPal Sandbox
-- [ ] Use of Bootstrap framework
+- [x] Use of Bootstrap framework
 - [ ] Node.js, React
 
 # Other Features
