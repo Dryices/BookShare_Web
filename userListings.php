@@ -35,50 +35,22 @@
 <?php include "header.php";
 ?>
 
-<!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex justify-cntent-center align-items-center">
-<div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-<!-- Slide 1 -->
-<div class="carousel-item active">
-<div class="carousel-container">
-<h2 class="animate__animated animate__fadeInDown">Welcome to <span>BookShare</span></h2>
-<p class="animate__animated animate__fadeInUp">Most students in Singapore use assessment books, course notes or online resources for use in their learning in their educations. <br></p>
-<a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-</div>
-</div>
-
-<!-- Slide 2 -->
-<div class="carousel-item">
-<div class="carousel-container">
-<h2 class="animate__animated animate__fadeInDown">The Issue</h2>
-<p class="animate__animated animate__fadeInUp">Currently pre- and post-secondary institution continue using physical books and notes.<br>
-    The problem is once students finish using these books or notes, they will mostly likely be collecting dust at home while some will be sold or donated to their friends who need it.</p>
-<a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-</div>
-</div>
-
-<!-- Slide 3 -->
-<div class="carousel-item">
-<div class="carousel-container">
-<h2 class="animate__animated animate__fadeInDown">Our goal</h2>
-<p class="animate__animated animate__fadeInUp">  Our platform aim is to reduce paper waste and promote the idea of sharing school materials through selling or donating!</p>
-<a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-</div>
-</div>
-
-<a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-<span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-</a>
-
-<a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-<span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-</a>
-
-</div>
-</section><!-- End Hero -->
-
 <main id="main">
+    <!-- ======= Blog Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>My listings</h2>
+
+          <ol>
+             <li><a class="" href="index.php">Home</a></li>
+            <li>My listings</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
  <?php
             include "db_helper.php";
   
@@ -89,7 +61,7 @@
         <div class="col-md-6">
             <div class="form"> 
                 <i class="fa fa-search"></i> <form class="d-flex justify-content-center" action="index.php" method="post">
-                <input name="search" id="search" type="text" class="form-control form-input" placeholder="Search anything...">
+                <input name="search" type="text" class="form-control form-input" placeholder="Search anything...">
                 <input type="submit" class="btn btn-primary" value="Search">
                 </form>
                 <span class="left-pan"><i class="fa fa-microphone"></i></span> 
@@ -128,38 +100,6 @@
 </div>
 
 </section><!-- End Services Section -->
-
-<!-- ======= Why Us Section ======= -->
-<section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
-<div class="container">
-
-<div class="row">
-<div class="col-lg-6 video-box">
-    <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xThlceHTduw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br>
-<br>
-</div>
-
-<div class="col-lg-6 d-flex flex-column justify-content-center p-5">
-
-<div class="icon-box">
-<div class="icon"><i class="bx bx-fingerprint"></i></div>
-<h4 class="title"><a href="">Lorem Ipsum</a></h4>
-<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-</div>
-
-<div class="icon-box">
-<div class="icon"><i class="bx bx-gift"></i></div>
-<h4 class="title"><a href="">Nemo Enim</a></h4>
-<p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-</div>
-
-</div>
-</div>
-
-</div>
-</section><!-- End Why Us Section -->
 
 
 

@@ -1,3 +1,4 @@
+<!-- Link this header file to all pages -->
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center header-dark">
 <div class="container d-flex justify-content-between align-items-center">
@@ -23,6 +24,7 @@ echo $_SESSION['username'];}?></li>
 <li><a href="contact.php">Contact Us</a></li>
 </ul>
 </li>
+<li><a href="userListings.php">My listings</a></li>
 <li><a href="loginregister.php">Login/Register</a></li>
 </ul>
 <i class="bi bi-list mobile-nav-toggle"></i>

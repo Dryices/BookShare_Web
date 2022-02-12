@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>BookShare-Team</title>
+  <title>BookShare-Contact</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,99 +27,48 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
 
-  <?php include "header.php";
+ <?php include "header.php";
 ?>
 
   <main id="main">
 
-    <!-- ======= Our Team Section ======= -->
+    <!-- ======= Contact Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Our Team</h2>
+          <h2>Create a forum post</h2>
           <ol>
-            <li><a class="" href="index.php">Home</a></li>
-            <li>Our Team</li>
+             <li><a class="" href="index.php">Home</a></li>
+            <li>Add post</li>
           </ol>
         </div>
 
       </div>
-    </section><!-- End Our Team Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://github.com/Dryices"><i class="bi bi-twitter"></i></a>
-                  <a href="https://github.com/Dryices"><i class="bi bi-facebook"></i></a>
-                  <a href="https://github.com/Dryices"><i class="bi bi-instagram"></i></a>
-                  <a href="https://github.com/Dryices"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Harith Irfan</h4>
-                <span>Team Leader</span>
-                <p>Admin number: P2032430<br>Oversees website design and database.</p>
-              </div>
-            </div>
+    </section><!-- End Contact Section -->
+     <div class="col-md-6 offset-md-3 mt-5">
+        <form accept-charset="UTF-8" action="#" method="post" target="_blank" enctype="multipart/form-data">
+          <div class="formdrop">
+            <label for="itemName">Post title</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Enter the title of your enquiry" required="required">
           </div>
+            <br>
+             <div class="form-group mt-3">
+                 <label for="itemDescription">Content</label>
+                <textarea type="text" class="form-control" name="content" id="content" rows="5" placeholder="Enter your questions" required="required"></textarea>
+             </div>
+          <br>
+          <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
+        </form>
+         <br>
+    </div> 
+    
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://github.com/Wankermon"><i class="bi bi-twitter"></i></a>
-                  <a href="https://github.com/Wankermon"><i class="bi bi-facebook"></i></a>
-                  <a href="https://github.com/Wankermon"><i class="bi bi-instagram"></i></a>
-                  <a href="https://github.com/Wankermon"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Wangda</h4>
-                <span>Database Manager</span>
-                <p>Admin number: 2032810<br>Manage database of website.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://github.com/onepunch69"><i class="bi bi-twitter"></i></a>
-                  <a href="https://github.com/onepunch69"><i class="bi bi-facebook"></i></a>
-                  <a href="https://github.com/onepunch69"><i class="bi bi-instagram"></i></a>
-                  <a href="https://github.com/onepunch69"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Tan Yi Quan</h4>
-                <span>Design Quality Officer</span>
-                <p>Admin number: <br>Ensures great user experience.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Team Section -->
-
-  </main><!-- End #main -->
+  
 
   <!-- ======= Footer ======= -->
 <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
@@ -221,7 +170,16 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <!-- For image preview-->
+  <script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
 
 </body>
-
 </html>

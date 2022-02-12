@@ -1,4 +1,6 @@
+
 <?php 
+//Just wanted to test login you can delete if you want
 include "db_helper.php";
 $conn = OpenCon();
 $email = $_POST['email'];
