@@ -145,14 +145,14 @@
 
 <div class="icon-box">
 <div class="icon"><i class="bx bx-fingerprint"></i></div>
-<h4 class="title"><a href="">Lorem Ipsum</a></h4>
-<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+<h4 class="title"><a href="">Save trees!</a></h4>
+<p class="description">Since the beginning, trees have furnished us with two of life’s essentials, food and oxygen. As we evolved, they provided additional necessities such as shelter, medicine, and tools. Today, their value continues to increase and more benefits of trees are being discovered as their role expands to satisfy the needs created by our modern lifestyles.</p>
 </div>
 
 <div class="icon-box">
 <div class="icon"><i class="bx bx-gift"></i></div>
-<h4 class="title"><a href="">Nemo Enim</a></h4>
-<p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+<h4 class="title"><a href="">Why?</a></h4>
+<p class="description">Trees have supported and sustained life throughout our existence. They have a wide variety of practical and commercial uses. Wood was the very first fuel, and is still used for cooking and heating by about half of the world’s population. Trees provide timber for building construction, furniture manufacture, tools, sporting equipment, and thousands of household items. Wood pulp is used to make paper.</p>
 </div>
 
 </div>
