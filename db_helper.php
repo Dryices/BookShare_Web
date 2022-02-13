@@ -46,7 +46,7 @@ function insertAcc($username, $email, $password, $dbc)
 function getAcc ($email, $password, $dbc)
 {
     $q = "SELECT * FROM user_accounts WHERE email = '$email' && password = SHA1('$password')";
-    $r = @mysql_query ($dbc, $q);
+    $r = @mysqli_query ($dbc, $q);
     
     return $r;
     //if mysql_num_rows($r) == 0 then either password or email wrong or the person dun have an acc
@@ -57,7 +57,7 @@ function getAcc ($email, $password, $dbc)
 function getAccFromUsername ($username, $dbc)
 {
     $q = "SELECT * FROM user_accounts WHERE username = '$username'";
-    $r = @mysql_query ($dbc, $q);
+    $r = @mysqli_query ($dbc, $q);
     
     return $r;
     //to get the results use while($row = mysqli_fetch_assoc($r))
@@ -69,7 +69,7 @@ function getAccFromUsername ($username, $dbc)
 function getAccFromEmail ($email, $dbc)
 {
     $q = "SELECT * FROM user_accounts WHERE email = '$email'";
-    $r = @mysql_query ($dbc, $q);
+    $r = @mysqli_query ($dbc, $q);
     
     return $r;
 }
@@ -80,7 +80,7 @@ function insertItemReview ($item_name, $username, $review, $rating, $item_id, $d
 {
     $q = "INSERT INTO item_review (itemName,username,review,rating,item_id) VALUES ('$item_name', '$username'"
             . ", '$review', '$rating', '$item_id')";
-    $r = @mysql_query($dbc, $q);
+    $r = @mysqli_query($dbc, $q);
     
     return $r;
 }
@@ -88,7 +88,7 @@ function insertItemReview ($item_name, $username, $review, $rating, $item_id, $d
 function getItemReviewByName ($item_name, $dbc)
 {
     $q = "SELECT * FROM item_review WHERE itemName = '$item_name'";
-    $r = @mysql_query($dbc, $q);
+    $r = @mysqli_query($dbc, $q);
     
     return $r;
 }
@@ -96,7 +96,7 @@ function getItemReviewByName ($item_name, $dbc)
 function getItemReviewByItemID ($item_id, $dbc)
 {
     $q = "SELECT * FROM item_review WHERE item_id = '$item_id'";
-    $r = @mysql_query($dbc, $q);
+    $r = @mysqli_query($dbc, $q);
     
     return $r;
 }
@@ -104,7 +104,7 @@ function getItemReviewByItemID ($item_id, $dbc)
 function getItemReviewByUser ($username, $dbc)
 {
     $q = "SELECT * FROM item_review WHERE username = '$username'";
-    $r = @mysql_query($dbc, $q);
+    $r = @mysqli_query($dbc, $q);
     
     return $r;
 }
@@ -115,7 +115,7 @@ function insertItem ($item_name, $description, $price, $image_path, $dbc)
 {
     $q = "INSERT INTO items_list (item_name, description, price, image_path) VALUES ('$item_name', '$description', "
         . "'$price', '$image_path')"; 
-    $r = @mysql_query($dbc, $q);
+    $r = @mysqli_query($dbc, $q);
     
     return $r;
 }

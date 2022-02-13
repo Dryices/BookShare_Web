@@ -13,10 +13,16 @@
   <ul>
 <li><?php 
 
-session_start();
-
-if(isset($_SESSION)){
-echo $_SESSION['username'];}?></li>
+if(isset($_SESSION['username'])){
+    echo "<div>" . $_SESSION['username'] . "</div>";
+}
+else
+{
+    //currently this is being printed out so there must be something were doing wrong with the sessions
+    echo "<div>not working</div>";
+}
+?>
+</li>
 <li><a href="index.php">Home</a></li>
 <li><a href="listitem.php">List Item</a></li>
 <li><a href="forum.php">Forum</a></li>

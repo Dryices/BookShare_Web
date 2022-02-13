@@ -70,7 +70,7 @@
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
-                <input type="submit" value="Submit">
+                <input type="submit" name="submit" value="Submit">
               </div>
               <div class="text sign-up-text">Don't have an account? <label for="flip">Sign Up now</label></div>
             </div>
@@ -85,6 +85,10 @@
             {
                 $loginerror1 = $_GET['loginerror1'];
                 echo "<p>Please fill in your " . $loginerror1 . "</p>";
+            }
+            if (isset($_GET['wronglogindetails']))
+            {
+                echo "<p>Either your email or password is wrong. Please try again.</p>";
             }
             ?>
       </div>
