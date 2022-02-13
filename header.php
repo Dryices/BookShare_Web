@@ -12,6 +12,9 @@
 <nav id="navbar" class="navbar">
   <ul>
 <li><?php 
+
+session_start();
+
 if(isset($_SESSION)){
 echo $_SESSION['username'];}?></li>
 <li><a href="index.php">Home</a></li>

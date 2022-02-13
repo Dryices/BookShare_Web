@@ -1,6 +1,8 @@
 <?php 
 //Just wanted to test login you can delete if you want
 
+session_start();
+
 if (isset($_POST["submit"]))
 {
     include "db_helper.php";
