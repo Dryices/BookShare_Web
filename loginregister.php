@@ -75,6 +75,18 @@
               <div class="text sign-up-text">Don't have an account? <label for="flip">Sign Up now</label></div>
             </div>
         </form>
+            <?php
+            if (isset($_GET['loginerror']))
+            {
+                $loginerror = $_GET['loginerror'];
+                echo "<p>Please fill in your " . $loginerror . "</p>";
+            }
+            if (isset($_GET['loginerror1']))
+            {
+                $loginerror1 = $_GET['loginerror1'];
+                echo "<p>Please fill in your " . $loginerror1 . "</p>";
+            }
+            ?>
       </div>
         <div class="signup-form">
           <div class="title">Sign Up</div>
