@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 13, 2022 at 06:41 AM
+-- Generation Time: Feb 13, 2022 at 07:57 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -56,6 +56,7 @@ DROP TABLE IF EXISTS `forum`;
 CREATE TABLE IF NOT EXISTS `forum` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `category` varchar(20) NOT NULL,
+  `title` varchar(100) NOT NULL,
   `isComment` tinyint(1) NOT NULL,
   `username` varchar(20) NOT NULL,
   `content` varchar(50000) NOT NULL,
