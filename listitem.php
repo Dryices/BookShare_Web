@@ -78,6 +78,8 @@
           <br>
           <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
           <br>
+        </form>
+         
           <div id="paypal-button-container-P-7YF52428BY641674SMIEMUWI"></div>
           <script src="https://www.paypal.com/sdk/js?client-id=AebQTHYqSrLkzSBiQeRGNDnx5jxbhSpRGU5-4Ekvi_QLRErQZhD9hezg_MZdMYOoyBJOgo_lpT-wJLt1&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
           <script>
@@ -99,7 +101,6 @@
                 }
             }).render('#paypal-button-container-P-7YF52428BY641674SMIEMUWI'); // Renders the PayPal button
           </script>
-        </form>
          <br>
     </div> 
     
