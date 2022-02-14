@@ -17,22 +17,6 @@ if(isset($_POST["submit"])){
     {
         $item_name = mysqli_real_escape_string($dbc, trim($_POST['itemName']));
     }
-    if(empty($_POST["type"]))
-    {
-        $errors[] = 'Please input item type.';
-    }
-    else
-    {
-        $item_name = mysqli_real_escape_string($dbc, trim($_POST['itemName']));
-    }
-    if(empty($_POST["category"]))
-    {
-        $errors[] = 'Please input item category.';
-    }
-    else
-    {
-        $item_name = mysqli_real_escape_string($dbc, trim($_POST['itemName']));
-    }
     
     if(empty($_POST["description"]))
     {
@@ -43,7 +27,7 @@ if(isset($_POST["submit"])){
         $description = mysqli_real_escape_string($dbc, trim($_POST['description']));
     }
     //i dunno if we want the description to be compulsory
-    $description = mysqli_real_escape_string($dbc, trim($_POST['description']));
+    //$description = mysqli_real_escape_string($dbc, trim($_POST['description']));
     
     if(empty($_POST["price"]))
     {
@@ -54,7 +38,7 @@ if(isset($_POST["submit"])){
         $price = mysqli_real_escape_string($dbc, trim($_POST['price']));
     }
     
-    if(!empty($_FILES["imageToUpload"]["name"])) { 
+    if(isset($_FILES["imageToUpload"])) { 
         // Get file info 
         $fileName = basename($_FILES["imageToUpload"]["name"]); 
         //set directory to store image in
@@ -92,7 +76,7 @@ if(isset($_POST["submit"])){
 if (empty($errors))
 {
     // Insert image path into database 
-    $r = insertItem($item_name, $item_type, $item_category, $description, $price, $target_file, $dbc);
+    $r = insertItem($item_name, $description, $price, $target_file, $dbc);
     
     if ($r)
     {
@@ -106,7 +90,7 @@ if (empty($errors))
 	<p class="error">You could not be registered due to a system error. We apologize for any inconvenience.</p>'; 
 			
 	// Debugging message:
-	echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
+	echo '<p>' . mysqli_error($dbc) . '</p>';
     }
 }
 else 
@@ -127,3 +111,4 @@ CloseCon($dbc);
 // Display status message 
 //echo $statusMsg;
 
+?>

@@ -69,7 +69,7 @@
           <br>
           <div class="form-group mt-3">
             <label class="mr-2">Upload an image:</label>
-            <input type="file" accept="image/*" onchange="loadFile(event)" name="imageT0Upload" id="imageToUpload">
+            <input type="file" accept="image/*" onchange="loadFile(event)" name="imageToUpload" id="imageToUpload">
            <div>
             <img id="output"/>
            </div>
