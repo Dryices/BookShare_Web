@@ -110,7 +110,7 @@
               <div class="member-info">
                 <h4>Tan Yi Quan</h4>
                 <span>Design Quality Officer</span>
-                <p>Admin number: <br>Ensures great user experience.</p>
+                <p>Admin number: 2032047 <br>Ensures great user experience.</p>
               </div>
             </div>
           </div>
