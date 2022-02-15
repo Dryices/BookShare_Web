@@ -116,7 +116,7 @@ else
  header("Location: index.php");
             exit();
 CloseCon($dbc);
-// Display status message 
+// Display status message. 
 //echo $statusMsg;
 
 ?>
