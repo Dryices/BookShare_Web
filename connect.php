@@ -55,10 +55,11 @@ mysqli_set_charset($dbc, 'utf8');
                 $r = insertAcc($username, $email, $password, $dbc);
                 // Run the query.
 		if ($r) { // If it ran OK.
-		
-			// Print a message:
-			echo '<h1>Thank you!</h1>
-		<p>You are now registered!</p><p><br /></p>';	
+                   echo ("<script LANGUAGE='JavaScript'>
+    window.alert('You have success fully registered an account');
+    window.location.href='loginregister.php';
+    </script>");
+			
 		
 		} else { // If it did not run OK.
 			

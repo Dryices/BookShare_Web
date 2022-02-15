@@ -169,7 +169,8 @@
                             <div class="caption-container">
                                 <p id="caption"></p>
                             </div>
-
+                            <br>
+                            <br>
                             <div class="row">
                                 <div class="column">
                                     <img class="demo cursor" src="assets\img\Type of books\img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
