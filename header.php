@@ -15,7 +15,7 @@
 <li style="color: white; font-weight: bold"><?php 
 
 if(isset($_SESSION['username'])){
-    echo "<div>".$_SESSION['username'] . "</div>";
+    echo "<a href=userListings.php>".$_SESSION['username'] . "</a>";
 }
 else
 {
@@ -34,7 +34,6 @@ else
 <li><a href="contact.php">Contact Us</a></li>
 </ul>
 </li>
-<li><a href="userListings.php">My listings</a></li>
 <li><a href="loginregister.php">Login/Register</a></li>
 <li><a href="logout_process.php">Logout</a></li>
 </ul>

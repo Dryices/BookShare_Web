@@ -2,6 +2,13 @@
 
 // Include the database configuration file  
 include 'db_helper.php';
+//Prompt user to log in
+while(!isset($_SESSION['username'])){ 
+  echo ("<script LANGUAGE='JavaScript'>
+    window.alert('Please log in to list an item');
+    window.location.href='listitem.php';
+    </script>");
+}
  
 // If file upload form is submitted  
 if(isset($_POST["submit"])){ 
@@ -106,7 +113,8 @@ else
 }else{
     $statusMsg = "File upload failed, please try again.";
 }*/
-
+ header("Location: index.php");
+            exit();
 CloseCon($dbc);
 // Display status message 
 //echo $statusMsg;
