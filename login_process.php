@@ -1,4 +1,5 @@
 <?php 
+session_start();
 //Just wanted to test login you can delete if you want
 
 if (isset($_POST["submit"]))
@@ -44,7 +45,6 @@ if (isset($_POST["submit"]))
             header("Location: loginregister.php?wronglogindetails=wrong");
             exit();
         }
-        
     }
     else
     {

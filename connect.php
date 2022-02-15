@@ -56,7 +56,7 @@ mysqli_set_charset($dbc, 'utf8');
                 // Run the query.
 		if ($r) { // If it ran OK.
                    echo ("<script LANGUAGE='JavaScript'>
-    window.alert('You have success fully registered an account');
+    window.alert('You have successfully registered an account');
     window.location.href='loginregister.php';
     </script>");
 			

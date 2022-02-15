@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!-- Link this header file to all pages -->
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center header-dark">
@@ -11,15 +12,15 @@
 
 <nav id="navbar" class="navbar">
   <ul>
-<li><?php 
+<li style="color: white; font-weight: bold"><?php 
 
 if(isset($_SESSION['username'])){
-    echo "<div>" . $_SESSION['username'] . "</div>";
+    echo "<div>".$_SESSION['username'] . "</div>";
 }
 else
 {
     //currently this is being printed out so there must be something were doing wrong with the sessions
-    echo "<div>not working</div>";
+    echo "<div>Not Logged In</div>";
 }
 ?>
 </li>
@@ -35,6 +36,7 @@ else
 </li>
 <li><a href="userListings.php">My listings</a></li>
 <li><a href="loginregister.php">Login/Register</a></li>
+<li><a href="logout_process.php">Logout</a></li>
 </ul>
 <i class="bi bi-list mobile-nav-toggle"></i>
 </nav><!-- .navbar -->
