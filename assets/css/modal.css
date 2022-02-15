@@ -1,0 +1,24 @@
+#gallery img {
+	 height: 75vw;
+	 object-fit: cover;
+}
+ @media (min-width: 576px) {
+	 #gallery img {
+		 height: 35vw;
+	}
+}
+ @media (min-width: 992px) {
+	 #gallery img {
+		 height: 18vw;
+	}
+}
+ .carousel-item img {
+	 height: 60vw;
+	 object-fit: cover;
+}
+ @media (min-width: 576px) {
+	 .carousel-item img {
+		 height: 350px;
+	}
+}
+ 
