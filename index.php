@@ -128,69 +128,6 @@
                             }
                         }
                         ?>
-                        
-                          <!-- Container for the image gallery --> <!<!-- testing new gallery -->
-                        
-                        <div class="container">
-                            <div class="mySlides">
-                                <div class="numbertext" >1 / 6</div>
-                                <img src="assets\img\Type of books\img_woods_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_woods.jpg">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">2 / 6</div>
-                                <img src="assets\img\Type of books\img_5terre_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_5terre.jpg">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">3 / 6</div>
-                                <img src="assets\img\Type of books\img_mountains_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_mountains.jpg">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">4 / 6</div>
-                                <img src="assets\img\Type of books\img_lights_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_lights.jpg">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">5 / 6</div>
-                                <img src="assets\img\Type of books\img_nature_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_nature.jpg">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">6 / 6</div>
-                                <img src="assets\img\Type of books\img_snow_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_snow.jpg">
-                            </div>
-
-                            <a class="prev" onclick="plusSlides(-1)">❮</a>
-                            <a class="next" onclick="plusSlides(1)">❯</a>
-
-                            <div class="caption-container">
-                                <p id="caption"></p>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="column">
-                                    <img class="demo cursor" src="assets\img\Type of books\img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="assets\img\Type of books\img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="assets\img\Type of books\img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="assets\img\Type of books\img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                                </div>
-                                <div class="column">
-                                    <img class="demo cursor" src="assets\img\Type of books\img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-                                </div>    
-                                <div class="column">
-                                    <img class="demo cursor" src="assets\img\Type of books\img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-                                </div>
-                            </div>
-                        </div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -201,7 +138,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <div class="modal-body">
-          <!--<img id="correspondingimg" alt="alt"/>-->
           <?php
           if (isset($_POST['search'])) {
               $search = $_POST['search'];
