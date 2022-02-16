@@ -60,8 +60,7 @@ if(isset($_POST["submit"])){
         
         //stores image in images/items/ folder i think cannot test until have the ui i think
         //then stores the file path as a string in sql database later
-        var_dump($_FILES["imageToUpload"]["tmp_name"]);
-        if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_dir)) 
+        if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_file)) 
         {
             echo "The file ". $fileName . " has been uploaded.";
         } 
