@@ -65,7 +65,7 @@
             <?php
             include "db_helper.php";
             echo "<div class='container'>";
-            $select = "select * from forum";
+             $select = "select * from forum WHERE id=$_GET[id]";
             $conn = OpenCon();
             $posts = mysqli_query($conn, $select);
             if(mysqli_num_rows($posts) > 0){

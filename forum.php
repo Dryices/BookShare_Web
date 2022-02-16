@@ -67,7 +67,8 @@
             $conn = OpenCon();
             $posts = mysqli_query($conn, $select);
             if(mysqli_num_rows($posts) > 0){
-                while($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC)){ ?>
+                while($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC)){
+                    echo$uniqueid=$rows['id'];?>
             <article class="entry">
 
 
@@ -85,7 +86,7 @@
               <div class="entry-content">
                 <p><?php echo $rows['content']; ?></p>
                 <div class="read-more">
-                  <a href="forumComments.php">Reply</a>
+                  <?php echo "<a href='forumComments.php?id=".$rows['id']."'>Reply</a>" ; ?>
                 </div>
               </div>
                
