@@ -179,10 +179,10 @@ function getAllItems ($dbc)
 
 //-------------------forum functions------------------------------
 
-function insertForumItem ($title, $username, $content, $dbc)
+function insertForumItem ($title, $username, $content, $mainid, $dbc)
 {
     $q = "INSERT INTO forum (title, username, content, timestamp, mainid) VALUES ('$title',"
-            . " '$username', '$content', CURRENT_TIMESTAMP, NULL)";
+            . " '$username', '$content', CURRENT_TIMESTAMP, '$mainid')";
     $r = @mysqli_query($dbc, $q);
     
     return $r;

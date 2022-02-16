@@ -16,12 +16,67 @@ $username = $_SESSION['username'];
 if (isset($_POST['submit']))
 {
     $dbc = OpenCon();
+    $errors = array();
     
+    if (!empty($_POST['mainid']))
+    {
+        $mainid = $_POST['mainid'];
+    }
+    else
+    {
+        $errors = "nomainid";
+    }
+    
+    if (!empty($_POST['comment']))
+    {
+        $content = $_POST['comment'];
+    }
+    else
+    {
+        $errors = "nocomment";
+    }
+    
+    if (empty($errors))
+    {
+        $r = insertForumItem(null, $username, $content, $mainid, $dbc);
+        
+        if ($r)
+        {
+            header ("Location: forumComments.php?status=success");
+            CloseCon($dbc);
+            exit();
+        }
+        else
+        {
+            header ("Location: forumComments.php?status=fail");
+            CloseCon($dbc);
+            exit();
+        }
+    }
+    else
+    {
+        $i = 0;
+        $headerMsg = "Location: forumComments.php?";
+        
+        while ($i < sizeof(errors))
+        {
+            if (i == 0)
+            {
+                $headerMsg = $headerMsg . "error" . $i . "=" . $errors[$i];
+            }
+            else if (i > 0)
+            {
+                $headerMsg = $headerMsg . "&&error" . $i . "=" . $errors[$i];
+            }
+            $i++;
+        }
+    }
     
 }
 else
 {
-    
+    header ("Location: forum.php");
+    exit();
 }
 /* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

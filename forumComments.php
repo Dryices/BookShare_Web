@@ -89,11 +89,11 @@
               </div>
                 <br>
                 <div class="form">
-                <form action="#"  method="post">
-
-<textarea id="comment" name="comment" rows="10" cols="50"> </textarea>
-<input type="submit" class="btn btn-primary" value="Submit">
-</form>
+                <form action="uploadComment.php"  method="post">
+                    <input type="hidden" id="mainid" name="mainid" value="<?php echo $rows['id']; ?>">
+                    <textarea id="comment" name="comment" rows="10" cols="50"> </textarea>
+                    <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+                </form>
                 </div>
 
             </article><!-- End blog entry -->

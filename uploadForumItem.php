@@ -41,7 +41,7 @@ if (isset($_POST["submit"]))
     
     if (empty($errors))
     {
-        $r = insertForumItem($title, $username, $content, $dbc);
+        $r = insertForumItem($title, $username, $content, null, $dbc);
         
         if ($r)
         {
@@ -71,6 +71,7 @@ if (isset($_POST["submit"]))
             {
                 $headerMsg = $headerMsg . "&&error" . $i . "=" . $errors[$i];
             }
+            $i++;
         }
     }
 }
