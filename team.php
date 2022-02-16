@@ -107,6 +107,7 @@
                   <a href="https://github.com/onepunch69"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
+                
               <div class="member-info">
                 <h4>Tan Yi Quan</h4>
                 <span>Design Quality Officer</span>
