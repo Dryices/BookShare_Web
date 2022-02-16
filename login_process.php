@@ -42,7 +42,7 @@ if (isset($_POST["submit"]))
         }
         else
         {
-            header("Location: loginregister.php?wronglogindetails=wrong");
+            header("Location: loginregister.php?logindetails=wrong");
             exit();
         }
     }
@@ -68,7 +68,3 @@ else
     header("Location: loginregister.php");
     exit();
 }
-
-
- 
- 

@@ -86,7 +86,7 @@
                 $loginerror1 = $_GET['loginerror1'];
                 echo "<p>Please fill in your " . $loginerror1 . "</p>";
             }
-            if (isset($_GET['wronglogindetails']))
+            if (isset($_GET['logindetails']))
             {
                 echo "<p>Either your email or password is wrong. Please try again.</p>";
             }

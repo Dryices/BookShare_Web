@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 13, 2022 at 07:57 AM
+-- Generation Time: Feb 16, 2022 at 07:44 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -57,7 +57,6 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `category` varchar(20) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `isComment` tinyint(1) NOT NULL,
   `username` varchar(20) NOT NULL,
   `content` varchar(50000) NOT NULL,
   `timestamp` datetime NOT NULL,
@@ -77,9 +76,10 @@ CREATE TABLE IF NOT EXISTS `items_list` (
   `item_name` varchar(100) NOT NULL,
   `description` varchar(1000) NOT NULL,
   `price` float NOT NULL,
+  `username` varchar(20) NOT NULL,
   `image_path` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

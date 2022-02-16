@@ -30,6 +30,54 @@ function CloseCon($conn)
     mysqli_close($conn);
 }
 
+//to use this u make an array with the conditions u want stored as a string inside
+//e.g. $conditionArray = array("item_name = 'PEEE Coursebook'", "price = 2", "description = 'stupid'");
+function getGroupOfItemsAND ($conditionArray, $table, $dbc)
+{
+    $q = "SELECT * FROM " . $table . " WHERE ";
+    $i = 0;
+    
+    while($i < sizeof($conditionArray))
+    {
+        if ($i == 0)
+        {
+            $q = $q . $conditionArray[$i];
+        }
+        else if ($i > 0)
+        {
+            $q = $q . " && " . $conditionArray[$i];
+        }
+        $i++;
+    }
+    
+    $r = @mysqli_query($dbc, $q);
+    
+    return $r;
+}
+
+function getGroupOfItemsOR ($conditionArray, $dbc)
+{
+    $q = "SELECT * FROM " . $table . " WHERE ";
+    $i = 0;
+    
+    while($i < sizeof($conditionArray))
+    {
+        if ($i == 0)
+        {
+            $q = $q . $conditionArray[$i];
+        }
+        else if ($i > 0)
+        {
+            $q = $q . " || " . $conditionArray[$i];
+        }
+        $i++;
+    }
+    
+    $r = @mysqli_query($dbc, $q);
+    
+    return $r;
+}
+
 //make a function to print or return all results individually i guess
  
 //--------------------user_accounts functions------------------------
@@ -74,11 +122,11 @@ function getAccFromEmail ($email, $dbc)
     return $r;
 }
 
-//----------------------item_review functions-----------------------
+//----------------------user_reviews functions-----------------------
 //not tested
-function insertItemReview ($item_name, $username, $review, $rating, $item_id, $dbc)
+function insertUserReview ($item_name, $username, $review, $rating, $item_id, $dbc)
 {
-    $q = "INSERT INTO item_review (itemName,username,review,rating,item_id) VALUES ('$item_name', '$username'"
+    $q = "INSERT INTO user_reviews (itemName,username,review,rating,item_id) VALUES ('$item_name', '$username'"
             . ", '$review', '$rating', '$item_id')";
     $r = @mysqli_query($dbc, $q);
     
@@ -87,7 +135,7 @@ function insertItemReview ($item_name, $username, $review, $rating, $item_id, $d
 
 function getItemReviewByName ($item_name, $dbc)
 {
-    $q = "SELECT * FROM item_review WHERE itemName = '$item_name'";
+    $q = "SELECT * FROM user_reviews WHERE itemName = '$item_name'";
     $r = @mysqli_query($dbc, $q);
     
     return $r;
@@ -95,7 +143,7 @@ function getItemReviewByName ($item_name, $dbc)
 
 function getItemReviewByItemID ($item_id, $dbc)
 {
-    $q = "SELECT * FROM item_review WHERE item_id = '$item_id'";
+    $q = "SELECT * FROM user_reviews WHERE item_id = '$item_id'";
     $r = @mysqli_query($dbc, $q);
     
     return $r;
@@ -103,21 +151,48 @@ function getItemReviewByItemID ($item_id, $dbc)
 
 function getItemReviewByUser ($username, $dbc)
 {
-    $q = "SELECT * FROM item_review WHERE username = '$username'";
+    $q = "SELECT * FROM user_reviews WHERE username = '$username'";
     $r = @mysqli_query($dbc, $q);
     
     return $r;
 }
 
-//--------------------items_list function--------------------------
+//--------------------items_list functions--------------------------
 
-function insertItem ($item_name, $description, $price, $image_path, $dbc)
+function insertItem ($item_name, $description, $price, $image_path, $username, $dbc)
 {
-    $q = "INSERT INTO items_list (item_name, description, price, image_path) VALUES ('$item_name', '$description', "
-        . "'$price', '$image_path')"; 
+    $q = "INSERT INTO items_list (item_name, description, price, image_path, username) VALUES ('$item_name', '$description', "
+        . "'$price', '$image_path', '$username')"; 
     $r = @mysqli_query($dbc, $q);
     
     return $r;
 }
+
+function getAllItems ($dbc)
+{
+    $q = "SELECT * FROM items_list";
+    $r = @mysqli_query($dbc, $q);
+}
+
+
+
+
+//-------------------forum functions------------------------------
+
+function insertForumItem ($category, $title, $username, $content, $timestamp, $mainid, $dbc)
+{
+    $q = "INSERT INTO forum (category, title, username, content, timestamp, mainid) VALUES ('$category', '$title',"
+            . " '$username', '$content', '$timestamp', '$mainid')";
+    $r = @mysqli_query($dbc, $q);
+    
+    return $r;
+}
+
+function getAllForumItems ($dbc)
+{
+    $q = "SELECT * FROM forum";
+    $r = @mysqli_query($dbc, $q);
+}
+
 
 ?>

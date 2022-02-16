@@ -11,6 +11,8 @@ while(!isset($_SESSION['username'])){
     </script>");
   exit();
 }
+
+$username = $_SESSION['username'];
  
 // If file upload form is submitted  
 if(isset($_POST["submit"])){ 
@@ -58,13 +60,14 @@ if(isset($_POST["submit"])){
         
         //stores image in images/items/ folder i think cannot test until have the ui i think
         //then stores the file path as a string in sql database later
+        var_dump($_FILES["imageToUpload"]["tmp_name"]);
         if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_dir)) 
         {
             echo "The file ". $fileName . " has been uploaded.";
         } 
         else 
         {
-            echo "Sorry, there was an error uploading your file.";
+            $errors[] = "Sorry, there was an error uploading your file.";
         }
         // Allow certain file formats 
         /*
@@ -85,29 +88,46 @@ if(isset($_POST["submit"])){
 if (empty($errors))
 {
     // Insert image path into database 
-    $r = insertItem($item_name, $description, $price, $target_file, $dbc);
+    $r = insertItem($item_name, $description, $price, $target_file, $username, $dbc);
     
     if ($r)
     {
-        echo 'Item added successfully!';
+        CloseCon($dbc);
+        header ("Location: listitem.php?status=success");
+        exit();
     }
     else
     {
         // If it did not run OK.
         // Public message:
-	echo '<h1>System Error</h1>
-	<p class="error">You could not be registered due to a system error. We apologize for any inconvenience.</p>'; 
+	$errors[] = "Item could not be registered due to a system error"; 
 			
 	// Debugging message:
-	echo '<p>' . mysqli_error($dbc) . '</p>';
+        CloseCon($dbc);
+	header ("Location: listitem.php?error=" . $errors);
+        exit();
     }
 }
 else 
 {
-    foreach ($errors as $value)
+    $headerMsg = "Location: listitem.php?";
+    $i = 0;
+    
+    while (i < sizeof($errors))
     {
-        echo $value;
+        if ($i == 0)
+        {
+            $headerMsg = $headerMsg . "error" . $i . "=" . $errors[$i];
+        }
+        else if ($i > 0)
+        {
+            $headerMsg = $headerMsg . "&error" . $i . "=" . $errors[$i];
+        }
+        $i++;
     }
+    CloseCon($dbc);
+    header($headerMsg);
+    exit();
 }
              
 /*if($r){
@@ -115,9 +135,7 @@ else
 }else{
     $statusMsg = "File upload failed, please try again.";
 }*/
- header("Location: index.php");
-            exit();
-CloseCon($dbc);
+
 // Display status message. 
 //echo $statusMsg;
 
