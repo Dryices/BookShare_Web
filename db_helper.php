@@ -104,7 +104,7 @@ function getAnnouncements($dbc)
 
 function insertAcc($username, $email, $password, $dbc)
 {
-    $q = "INSERT INTO user_accounts (username,email,password) VALUES ('$username', '$email', SHA1('$password'))";	
+    $q = "INSERT INTO user_accounts (username, email, password, profile_picture) VALUES ('$username', '$email', SHA1('$password'), NULL)";	
     $r = @mysqli_query ($dbc, $q);
     
     return $r;
