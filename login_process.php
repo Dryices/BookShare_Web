@@ -1,4 +1,4 @@
-<?php 
+    <?php 
 session_start();
 //Just wanted to test login you can delete if you want
 

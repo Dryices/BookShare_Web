@@ -81,30 +81,37 @@
             </div>
         </section><!-- End Hero -->
         
-         </section><!-- End Services Section -->
+     <section id="blog" class="blog d-flex justify-content-center">
+   
+               
+                  <br>
+            <?php
+            include "db_helper.php";
+            echo "<div class='container'>";
+            $image = "select * from announcements";
+             $conn = OpenCon();
+            $posts = mysqli_query($conn, $image);
+            if(mysqli_num_rows($posts) > 0){
+                while($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC)){
+                    ?>
+                    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+                        <div class="container">
 
-            <!-- ======= Announcement Section======= -->
-            <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
-                <div class="container flex-column justify-cntent-center">
+                     <img src="<?php echo $rows['imagepath']; ?>" height="200" width="200" alt="image of item"/>
+                     <p>Sell your books at a low price!</p>
+                         </div>
+                    </section>           
+                  <?php }
+              } ?>
+         
+    </section><!-- End Blog Section -->
 
-                    <div class="row">
-                        <div class="col-lg-4  justify-content-center">
-                            <br>
-                            <img src="#" id="announcement" name="announcement" height="300px" width="1000px">
-                            <br>
-                            <br>
-                        </div>
-
-                    
-                    </div>
-
-                </div>
-            </section><!-- End of Announcement Section -->
+            
 
 
         <main id="main">
             <?php
-            include "db_helper.php";
+           
 
             $select = "select * from items_list";
             ?>   
@@ -145,7 +152,7 @@
                                         <h1 class="title"><?php echo $rows['item_name']; ?></h1>
                                         <p class="description"><?php echo $rows['description']; ?></p>
                                         <p class="description">$<?php echo $rows['price']; ?></p>
-                                        <?php echo "<a href='bookdetail.php?id=".$rows['id']."'>Reply</a>" ; ?>
+                                        <?php echo "<a href='bookdetail.php?id=".$rows['id']."'>Details</a>" ; ?>
                                     </div>
                                     
                                 </div>

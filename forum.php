@@ -74,13 +74,13 @@
 
 
               <h2 class="entry-title">
-                <a href="blog-single.html"><?php echo $rows['title']; ?></a>
+                <a ><?php echo $rows['title']; ?></a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><a href="blog-single.html"><i class="bi bi-person"></i><?php echo $rows['username']; ?></a></li>
-                  <li class="d-flex align-items-center"><a href="blog-single.html"><i class="bi bi-clock"></i><a href="blog-single.html"><time datetime="2020-01-01"><?php echo $rows['timestamp']; ?></time></a></li>
+                  <li class="d-flex align-items-center"><a ><i class="bi bi-person"></i><?php echo $rows['username']; ?></a></li>
+                  <li class="d-flex align-items-center"><a ><i class="bi bi-clock"></i><a ><time datetime="2020-01-01"><?php echo $rows['timestamp']; ?></time></a></li>
                 </ul>
               </div>
 
@@ -99,18 +99,7 @@
           </div>
           <div class="col-lg-4">
 
-            <div class="sidebar">
-
-              <h3 class="sidebar-title">Search</h3>
-              <div class="sidebar-item search-form">
-                <form name="searchPost" id="searchPost" action="index.php" method="post">
-                  <input type="text">
-                  <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
-              </div><!-- End sidebar search formn-->
-
-             
-              </div><!-- End sidebar tags-->
+          
 
             </div><!-- End sidebar -->
 
