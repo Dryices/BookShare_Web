@@ -22,7 +22,7 @@ if(isset($_POST["submit"])){
     
     if(empty($_POST["itemName"]))
     {
-        $errors[] = 'Please input item name.';
+        $errors[] = 'noitemname.';
     }
     else
     {
@@ -31,7 +31,7 @@ if(isset($_POST["submit"])){
     
     if(empty($_POST["description"]))
     {
-        $errors[] = 'Please input item description.';
+        $errors[] = 'nodescription.';
     }
     else
     {
@@ -42,7 +42,7 @@ if(isset($_POST["submit"])){
     
     if(empty($_POST["price"]))
     {
-        $errors[] = 'Please select a price';
+        $errors[] = 'noprice';
     }
     else
     {
@@ -66,7 +66,7 @@ if(isset($_POST["submit"])){
         } 
         else 
         {
-            $errors[] = "Sorry, there was an error uploading your file.";
+            $errors[] = "fileuploaderror";
         }
         // Allow certain file formats 
         /*
@@ -97,13 +97,9 @@ if (empty($errors))
     }
     else
     {
-        // If it did not run OK.
-        // Public message:
-	$errors[] = "Item could not be registered due to a system error"; 
-			
 	// Debugging message:
         CloseCon($dbc);
-	header ("Location: listitem.php?error=" . $errors);
+	header ("Location: listitem.php?status=fail");
         exit();
     }
 }

@@ -1,6 +1,5 @@
 <?php
 
-$mainid = "NULL";
 
 include 'db_helper.php';
 //Prompt user to log in
@@ -15,43 +14,42 @@ while(!isset($_SESSION['username'])){
 
 $username = $_SESSION['username'];
 
-
-if (isset($_POST["submit"]))
+if (isset($_POST['submit']))
 {
     $dbc = OpenCon();
     $errors = array();
     
-    if (!empty($_POST['title']))
+    if (!empty($_POST['feedback']))
     {
-        $title = $_POST['title'];
+        $feedback = $_POST['feedback'];
     }
     else
     {
-        $errors = "notitle";
+        $errors = "nofeedback";
     }
     
-    if (!empty($_POST['content']))
+    if (!empty($_POST['rating']))
     {
-        $content = $_POST['content'];
+        $rating = $_POST['rating'];
     }
     else
     {
-        $errors = "nocontent";
+        $errors = "norating";
     }
     
     if (empty($errors))
     {
-        $r = insertForumItem($title, $username, $content, $mainid, $dbc);
+        $r = insertFeedback($username, $feedback, $rating, $dbc);
         
         if ($r)
         {
-            header ("location: forum.php?status=success");
+            header ("Location: contact.php?status=success");
             CloseCon($dbc);
             exit();
         }
         else
         {
-            header ("Location: forum.php?status=failed");
+            header ("Location: contact.php?status=failed");
             CloseCon($dbc);
             exit();
         }
@@ -74,10 +72,6 @@ if (isset($_POST["submit"]))
             $i++;
         }
     }
-}
-else
-{
-    header ("Location: listPost.php");
 }
 /* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

@@ -224,4 +224,15 @@ function getAllForumItems ($dbc)
 }
 
 
+//--------------------------website_feeddback functions-----------------------
+
+function insertFeedback($username, $feedback, $rating, $dbc)
+{
+    $q = "INSERT INTO website_feedback (username, feedback, rating) VALUES ('$username', '$feedback', '$rating')";
+    
+    $r = @mysqli_query($dbc, $q);
+    
+    return $r;
+}
+
 ?>
