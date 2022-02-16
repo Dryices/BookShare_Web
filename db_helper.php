@@ -179,13 +179,23 @@ function getAllItems ($dbc)
 
 //-------------------forum functions------------------------------
 
-function insertForumItem ($category, $title, $username, $content, $timestamp, $mainid, $dbc)
+function insertForumItem ($title, $username, $content, $dbc)
 {
-    $q = "INSERT INTO forum (category, title, username, content, timestamp, mainid) VALUES ('$category', '$title',"
-            . " '$username', '$content', '$timestamp', '$mainid')";
+    $q = "INSERT INTO forum (title, username, content, timestamp, mainid) VALUES ('$title',"
+            . " '$username', '$content', CURRENT_TIMESTAMP, NULL)";
     $r = @mysqli_query($dbc, $q);
     
     return $r;
+}
+
+function getID($dbc)
+{
+    
+}
+
+function SetMainID()
+{
+    
 }
 
 function getAllForumItems ($dbc)

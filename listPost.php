@@ -51,7 +51,7 @@
       </div>
     </section><!-- End Contact Section -->
      <div class="col-md-6 offset-md-3 mt-5">
-        <form accept-charset="UTF-8" action="#" method="post" target="_blank" enctype="multipart/form-data">
+        <form accept-charset="UTF-8" action="uploadForumItem.php" method="post" target="_blank" enctype="multipart/form-data">
           <div class="formdrop">
             <label for="itemName">Post title</label>
             <input type="text" name="title" id="title" class="form-control" placeholder="Enter the title of your enquiry" required="required">

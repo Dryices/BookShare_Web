@@ -79,7 +79,6 @@
                 <ul>
                   <li class="d-flex align-items-center"><a href="blog-single.html"><i class="bi bi-person"></i><?php echo $rows['username']; ?></a></li>
                   <li class="d-flex align-items-center"><a href="blog-single.html"><i class="bi bi-clock"></i><a href="blog-single.html"><time datetime="2020-01-01"><?php echo $rows['timestamp']; ?></time></a></li>
-                  <li class="d-flex align-items-center"><a href="blog-single.html"><i class="bi bi-chat-dots"></i><?php echo $rows['isComment']; ?></a></li>
                 </ul>
               </div>
 
