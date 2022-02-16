@@ -51,34 +51,34 @@
       </div>
     </section><!-- End Contact Section -->
      <div class="col-md-6 offset-md-3 mt-5">
-        <form accept-charset="UTF-8" action="uploadItem.php" method="post" target="_blank" enctype="multipart/form-data">
-          <div class="formdrop">
-            <label for="itemName">Item name</label>
-            <input type="text" name="itemName" id="itemName" class="form-control" placeholder="Enter listing name" required="required">
-          </div>
-            <br>
-          <div class="form-group">
-            <label for="price">Price</label>
-            <input type="number" min="0" name="price"  id="price"  class="form-control" placeholder="Enter listing price" required="required">
-          </div>
-            <br>
+         <form accept-charset="UTF-8" action="uploadItem.php" method="post" target="_blank" enctype="multipart/form-data">
+             <div class="formdrop">
+                 <label for="itemName">Item name</label>
+                 <input type="text" name="itemName" id="itemName" class="form-control" placeholder="Enter listing name" required="required">
+             </div>
+             <br>
+             <div class="form-group">
+                 <label for="price">Price</label>
+                 <input type="number" min="0" name="price"  id="price"  class="form-control" placeholder="Enter listing price" required="required">
+             </div>
+             <br>
              <div class="form-group mt-3">
                  <label for="itemDescription">Item description</label>
-                <textarea type="text" class="form-control" name="description" id="description" rows="5" placeholder="Enter a brief description of the item" required="required"></textarea>
-              </div>
-          <br>
-          <div class="form-group mt-3">
-            <label class="mr-2">Upload an image:</label>
-            <input type="file" accept="image/*" onchange="loadFile(event)" name="imageToUpload" id="imageToUpload">
-           <div>
-            <img id="output"/>
-           </div>
-            
-          </div>
-          <br>
-          <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
-          <br>
-        </form>
+                 <textarea type="text" class="form-control" name="description" id="description" rows="5" placeholder="Enter a brief description of the item" required="required"></textarea>
+             </div>
+             <br>
+             <div class="form-group mt-3">
+                 <label class="mr-2">Upload an image:</label>
+                 <input type="file" accept="image/*" onchange="loadFile(event)" name="imageToUpload" id="imageToUpload">
+                 <div>
+                     <img id="output"/>
+                 </div>
+
+             </div>
+             <br>
+             <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
+             <br>
+         </form>
          
          <br>
     </div> 
