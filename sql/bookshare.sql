@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 16, 2022 at 03:28 PM
+-- Generation Time: Feb 16, 2022 at 05:09 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -32,7 +32,15 @@ CREATE TABLE IF NOT EXISTS `announcements` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `imagepath` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `announcements`
+--
+
+INSERT INTO `announcements` (`id`, `imagepath`) VALUES
+(1, 'announcements/announcement1.jpg'),
+(2, 'announcements/announcement2.jpg');
 
 -- --------------------------------------------------------
 
@@ -49,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `mainid` mediumint(8) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forum`
@@ -64,7 +72,9 @@ INSERT INTO `forum` (`id`, `title`, `username`, `content`, `timestamp`, `mainid`
 (8, '', '', '', '2022-02-16 22:51:49', NULL),
 (9, 'eswsrt', 'John Doe', 'rtvghb', '2022-02-16 22:55:04', NULL),
 (10, 'ddfcgv', 'John Doe', 'zxdfcg', '2022-02-16 23:07:51', NULL),
-(11, NULL, 'John Doe', ' qwertfg', '2022-02-16 23:14:10', 4);
+(11, NULL, 'John Doe', ' qwertfg', '2022-02-16 23:14:10', 4),
+(12, NULL, 'John Doe', ' wesrdt', '2022-02-17 00:11:49', 4),
+(13, NULL, 'John Doe', ' srdfgh', '2022-02-17 00:39:19', 4);
 
 -- --------------------------------------------------------
 
@@ -106,6 +116,7 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
   `username` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` char(40) NOT NULL,
+  `profile_picture` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -113,9 +124,9 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
 -- Dumping data for table `user_accounts`
 --
 
-INSERT INTO `user_accounts` (`id`, `username`, `email`, `password`) VALUES
-(1, 'John Doe', 'johndoe12345@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964'),
-(2, 'Marcus Tan', 'marcustan@123.com', '8cb2237d0679ca88db6464eac60da96345513964');
+INSERT INTO `user_accounts` (`id`, `username`, `email`, `password`, `profile_picture`) VALUES
+(1, 'John Doe', 'johndoe12345@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', ''),
+(2, 'Marcus Tan', 'marcustan@123.com', '8cb2237d0679ca88db6464eac60da96345513964', '');
 
 -- --------------------------------------------------------
 
