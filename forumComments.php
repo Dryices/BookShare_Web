@@ -66,6 +66,8 @@
             include "db_helper.php";
             echo "<div class='container'>";
             $select = "select * from forum WHERE id=$_GET[id]";
+            //$id=$_GET['id'];
+            //echo $id;
             $conn = OpenCon();
             $posts = mysqli_query($conn, $select);
             if(mysqli_num_rows($posts) > 0){
@@ -103,9 +105,9 @@
   
             <?php
             echo "<div class='container'>";
-            $select = "select * from forum";
+            $comment = "select * from forum WHERE mainid=$_GET[id]";
             $conn = OpenCon();
-            $posts = mysqli_query($conn, $select);
+            $posts = mysqli_query($conn, $comment);
             if(mysqli_num_rows($posts) > 0){
                 while($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC)){ ?>
             <article class="entry">

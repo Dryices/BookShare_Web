@@ -60,15 +60,16 @@
                   <form action="listPost.php" >
         <input type="submit" class="btn btn-primary" value="Add post">
     </form>
+                  <br>
             <?php
             include "db_helper.php";
             echo "<div class='container'>";
-            $select = "select * from forum";
+            $select = "select * from forum WHERE mainid IS NULL or mainid = ''";
             $conn = OpenCon();
             $posts = mysqli_query($conn, $select);
             if(mysqli_num_rows($posts) > 0){
                 while($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC)){
-                    echo$uniqueid=$rows['id'];?>
+                    ?>
             <article class="entry">
 
 
