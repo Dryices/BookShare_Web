@@ -4,7 +4,7 @@
 
 # Basic Features (15%) [All]
 
-- [ ] Home Page - logo, contact, search, FAQs, services, login, sign-in etc.
+- [x] Home Page - logo, contact, search, FAQs, services, login, sign-in etc.
 - [x] Footer Page - about us, contact,forum, profiles etc.
 - [x] About us page - company profile, address, map location
 - [x] Consistent branding across all pages
@@ -16,11 +16,11 @@
 # Advanced Features (15%) [All]
 
 - [ ] Dynamic announcements or sales promotion from SQL database
-- [ ] Dynamic image gallery view from SQL database
+- [x] Dynamic image gallery view from SQL database
 - [ ] Dynamic User Rating System (rating stored in SQL database)
 - [ ] Use of JSON between client and server
 - [ ] Photos and/or video files upload with update to SQL database
-- [ ] Quick Internal Search (Use of SQL)
+- [x] Quick Internal Search (Use of SQL)
 - [ ] Contact us or feedback from user stored to SQL database
 - [ ] Management of data (CRUD) stored to SQL database e.g. create, read, update and delete of user accounts
 - [ ] Discussion Forum, Comments, Blog
