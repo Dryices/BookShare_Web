@@ -95,7 +95,7 @@
               </div>
             </div>
           </div>
-
+            
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
