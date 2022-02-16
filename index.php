@@ -135,32 +135,32 @@
                         <div class="container">
                             <div class="mySlides">
                                 <div class="numbertext" >1 / 6</div>
-                                <img src="assets\img\Type of books\img_woods_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="assets\img\Type of books\img_woods_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_woods.jpg">
                             </div>
 
                             <div class="mySlides">
                                 <div class="numbertext">2 / 6</div>
-                                <img src="assets\img\Type of books\img_5terre_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="assets\img\Type of books\img_5terre_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_5terre.jpg">
                             </div>
 
                             <div class="mySlides">
                                 <div class="numbertext">3 / 6</div>
-                                <img src="assets\img\Type of books\img_mountains_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="assets\img\Type of books\img_mountains_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_mountains.jpg">
                             </div>
 
                             <div class="mySlides">
                                 <div class="numbertext">4 / 6</div>
-                                <img src="assets\img\Type of books\img_lights_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="assets\img\Type of books\img_lights_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_lights.jpg">
                             </div>
 
                             <div class="mySlides">
                                 <div class="numbertext">5 / 6</div>
-                                <img src="assets\img\Type of books\img_nature_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="assets\img\Type of books\img_nature_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_nature.jpg">
                             </div>
 
                             <div class="mySlides">
                                 <div class="numbertext">6 / 6</div>
-                                <img src="assets\img\Type of books\img_snow_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="assets\img\Type of books\img_snow_wide.jpg" style="width:100%" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="assets\img\Type of books\img_snow.jpg">
                             </div>
 
                             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -198,13 +198,14 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+          <img id="correspondingimg" alt="alt"/>
           <div id="paypal-button-container-P-7YF52428BY641674SMIEMUWI"></div>
           <script src="https://www.paypal.com/sdk/js?client-id=AebQTHYqSrLkzSBiQeRGNDnx5jxbhSpRGU5-4Ekvi_QLRErQZhD9hezg_MZdMYOoyBJOgo_lpT-wJLt1&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
           <script>
@@ -409,6 +410,24 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+var exampleModal = document.getElementById('exampleModal')
+exampleModal.addEventListener('show.bs.modal', function (event) {
+  // Button that triggered the modal
+  var button = event.relatedTarget
+  // Extract info from data-bs-* attributes
+  var recipient = button.getAttribute('data-bs-whatever')
+  // If necessary, you could initiate an AJAX request here
+  // and then do the updating in a callback.
+  //
+  // Update the modal's content.
+  var modalTitle = exampleModal.querySelector('.modal-title')
+  var modalBodyInput = exampleModal.querySelector('.modal-body img')
+  //getElementById(correspondingimg)
+
+  modalTitle.textContent = 'New message to ' + recipient
+  modalBodyInput.src =  recipient
+})
                         </script>
 
     </body>
