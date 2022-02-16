@@ -13,8 +13,6 @@ while(!isset($_SESSION['username'])){
 }
 
 $user = $_SESSION['user_id'];
-var_dump($user);
-var_dump($_FILES['file']);
 
 $dbhost = "localhost";
  $dbuser = "root";
@@ -43,7 +41,6 @@ if (isset($_FILES['file'])) {
             $stmt->close();
         }
     }
-    
-    var_dump($result);
+    exit();
 
 ?>
