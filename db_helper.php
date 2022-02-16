@@ -189,8 +189,17 @@ function getAllItems ($dbc)
 
 function insertForumItem ($title, $username, $content, $mainid, $dbc)
 {
-    $q = "INSERT INTO forum (title, username, content, timestamp, mainid) VALUES ($title,"
-            . " '$username', '$content', CURRENT_TIMESTAMP, $mainid)";
+    if ($title == "NULL")
+    {
+        $q = "INSERT INTO forum (title, username, content, timestamp, mainid) VALUES (NULL,"
+            . " '$username', '$content', CURRENT_TIMESTAMP, '$mainid')";
+    }
+    else if ($mainid == "NULL")
+    {
+        $q = "INSERT INTO forum (title, username, content, timestamp, mainid) VALUES ('$title',"
+            . " '$username', '$content', CURRENT_TIMESTAMP, NULL)";
+    }
+    
     $r = @mysqli_query($dbc, $q);
     
     return $r;

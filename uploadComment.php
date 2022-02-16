@@ -44,7 +44,7 @@ if (isset($_POST['submit']))
         
         if ($r)
         {
-            header ("Location: forumComments.php?status=success");
+            header ("Location: forumComments.php?status=success&id=$mainid");
             CloseCon($dbc);
             exit();
         }
