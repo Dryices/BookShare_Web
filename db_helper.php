@@ -84,6 +84,18 @@ function insertAnnouncement($imagepath, $dbc)
 {
     $q = "INSERT INTO announcements (imagepath) VALUES ('$imagepath')";
     
+    $r = @mysqli_query($dbc, $q);
+    
+    return $r;
+}
+
+function getAnnouncements($dbc)
+{
+    $q = "SELECT * FROM announcements";
+    
+    $r = @mysqli_query($dbc, $q);
+    
+    return $r;
 }
 
 //make a function to print or return all results individually i guess

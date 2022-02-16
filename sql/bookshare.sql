@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 16, 2022 at 01:33 PM
+-- Generation Time: Feb 16, 2022 at 03:28 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -30,20 +30,8 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `announcements`;
 CREATE TABLE IF NOT EXISTS `announcements` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `image` blob NOT NULL,
+  `imagepath` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cookies`
---
-
-DROP TABLE IF EXISTS `cookies`;
-CREATE TABLE IF NOT EXISTS `cookies` (
-  `cookie_name` varchar(20) NOT NULL,
-  `cookie_value` varchar(5000) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -55,20 +43,28 @@ CREATE TABLE IF NOT EXISTS `cookies` (
 DROP TABLE IF EXISTS `forum`;
 CREATE TABLE IF NOT EXISTS `forum` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
   `username` varchar(20) NOT NULL,
   `content` varchar(50000) NOT NULL,
   `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `mainid` mediumint(8) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forum`
 --
 
 INSERT INTO `forum` (`id`, `title`, `username`, `content`, `timestamp`, `mainid`) VALUES
-(3, 'wesrdt', 'John Doe', 'awesrdt', '2022-02-16 21:13:12', NULL);
+(4, '', 'John Doe', ' rrdxfgcvh', '2022-02-16 22:15:36', NULL),
+(3, 'wesrdt', 'John Doe', 'awesrdt', '2022-02-16 21:13:12', NULL),
+(5, '', 'John Doe', ' aweesrc', '2022-02-16 22:16:42', NULL),
+(6, '', 'John Doe', ' qwiuheui', '2022-02-16 22:20:32', NULL),
+(7, '', 'John Doe', ' uygwb', '2022-02-16 22:22:32', 4),
+(8, '', '', '', '2022-02-16 22:51:49', NULL),
+(9, 'eswsrt', 'John Doe', 'rtvghb', '2022-02-16 22:55:04', NULL),
+(10, 'ddfcgv', 'John Doe', 'zxdfcg', '2022-02-16 23:07:51', NULL),
+(11, NULL, 'John Doe', ' qwertfg', '2022-02-16 23:14:10', 4);
 
 -- --------------------------------------------------------
 
@@ -124,21 +120,6 @@ INSERT INTO `user_accounts` (`id`, `username`, `email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_ratings`
---
-
-DROP TABLE IF EXISTS `user_ratings`;
-CREATE TABLE IF NOT EXISTS `user_ratings` (
-  `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
-  `comments` varchar(10000) NOT NULL,
-  `rating` float NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user_reviews`
 --
 
@@ -150,6 +131,21 @@ CREATE TABLE IF NOT EXISTS `user_reviews` (
   `review` varchar(10000) NOT NULL,
   `rating` float NOT NULL,
   `item_id` mediumint(8) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `website_feedback`
+--
+
+DROP TABLE IF EXISTS `website_feedback`;
+CREATE TABLE IF NOT EXISTS `website_feedback` (
+  `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
+  `feedback` text NOT NULL,
+  `rating` int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
