@@ -99,7 +99,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/IMG20211228143850 (2).jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://github.com/onepunch69"><i class="bi bi-twitter"></i></a>
                   <a href="https://github.com/onepunch69"><i class="bi bi-facebook"></i></a>
