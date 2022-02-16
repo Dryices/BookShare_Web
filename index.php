@@ -29,9 +29,6 @@
         <link href="assets/css/style.css" rel="stylesheet">
         <link href="assets/css/imagegallery.css" rel="stylesheet">
         
-        
-        
-
     </head>
 
     <body>
@@ -119,16 +116,19 @@
                             while ($rows = mysqli_fetch_array($items, MYSQLI_ASSOC)) {
                                 ?>
 
-                                <div class="col-lg-3" data-aos="fade-up">
-                                    <div class="icon-box icon-box-pink">
+                                <div class="col-lg-3" data-aos="fade-up" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <div class="icon-box icon-box-pink" >
                                         <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                                        <img src="<?php echo $rows['image_path']; ?>" alt="stupidyiquan"/>
                                         <h4 class="title"><?php echo $rows['item_name']; ?></h4>
                                         <p class="description"><?php echo $rows['description']; ?></p>
                                         <p class="description">$<?php echo $rows['price']; ?></p>
                                     </div>
                                 </div>
-    <?php }
-} ?>
+                            <?php
+                            }
+                        }
+                        ?>
 
                         <!-- Container for the image gallery --> <!<!-- testing new gallery -->
                         
@@ -194,39 +194,63 @@
                         </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-xl" >
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-          <img id="correspondingimg" alt="alt"/>
-          <div id="paypal-button-container-P-7YF52428BY641674SMIEMUWI"></div>
-          <script src="https://www.paypal.com/sdk/js?client-id=AebQTHYqSrLkzSBiQeRGNDnx5jxbhSpRGU5-4Ekvi_QLRErQZhD9hezg_MZdMYOoyBJOgo_lpT-wJLt1&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-          <script>
-            paypal.Buttons({
-                style: {
-                    shape: 'pill',
-                    color: 'gold',
-                    layout: 'horizontal',
-                    label: 'subscribe'
-                },
-                createSubscription: function(data, actions) {
-                  return actions.subscription.create({
-                    /* Creates the subscription */
-                    plan_id: 'P-7YF52428BY641674SMIEMUWI'
-                  });
-                },
-                onApprove: function(data, actions) {
-                  alert(data.subscriptionID); // You can add optional success message for the subscriber here
-                }
-            }).render('#paypal-button-container-P-7YF52428BY641674SMIEMUWI'); // Renders the PayPal button
-          </script>
+        <div class="modal-body">
+          <!--<img id="correspondingimg" alt="alt"/>-->
+          <?php
+          if (isset($_POST['search'])) {
+              $search = $_POST['search'];
+              $select = "SELECT * FROM `items_list` WHERE item_name LIKE '%" . $search . "%' OR description LIKE '%" . $search . "%'";
+          }
+          $conn = OpenCon();
+          $items = mysqli_query($conn, $select);
+          if (mysqli_num_rows($items) > 0) {
+              while ($rows = mysqli_fetch_array($items, MYSQLI_ASSOC)) {
+                  ?>
+
+                  <h4 class="title"><?php echo $rows['item_name']; ?></h4>
+                  <p class="description"><?php echo $rows['description']; ?></p>
+                  <p class="description">$<?php echo $rows['price']; ?></p>
+              </div>
+              <?php
+          }
+      }
+      ?>
+
+        <div class="col-md-12 text-center"> <!--<!-- paypayl is inside -->
+            <div id="paypal-button-container-P-7YF52428BY641674SMIEMUWI"></div>
+            <script src="https://www.paypal.com/sdk/js?client-id=AebQTHYqSrLkzSBiQeRGNDnx5jxbhSpRGU5-4Ekvi_QLRErQZhD9hezg_MZdMYOoyBJOgo_lpT-wJLt1&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+            <script>
+              paypal.Buttons({
+                  style: {
+                      shape: 'pill',
+                      color: 'gold',
+                      layout: 'horizontal',
+                      label: 'subscribe'
+                  },
+                  createSubscription: function(data, actions) {
+                    return actions.subscription.create({
+                      /* Creates the subscription */
+                      plan_id: 'P-7YF52428BY641674SMIEMUWI'
+                    });
+                  },
+                  onApprove: function(data, actions) {
+                    alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                  }
+              }).render('#paypal-button-container-P-7YF52428BY641674SMIEMUWI'); // Renders the PayPal button
+            </script>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
+          <div class="col-md-12 text-center">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
       </div>
     </div>
   </div>
