@@ -155,17 +155,14 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <form action="uploadReview.php" method="post" role="form" class="php-email-form">
+                            
                                 <div class="row">
+                                    <form action="uploadReview.php" method="post" role="form" class="php-email-form">
              
                                 <div class="form-group mt-3">
                                     <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                                 </div>
-                                <div class="my-3">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                                </div>
+                               
                                 <div class="text-center">
                                     Help us improve by rating our website. Thank you!</div>
                                     

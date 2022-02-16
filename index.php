@@ -37,6 +37,8 @@
         ?>
         
         
+        
+        
 
         <!-- ======= Hero Section ======= -->
         <section id="hero" class="d-flex justify-cntent-center align-items-center">
@@ -80,6 +82,8 @@
 
             </div>
         </section><!-- End Hero -->
+        
+        
         
      <section id="blog" class="blog d-flex justify-content-center">
    
