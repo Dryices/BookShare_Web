@@ -89,9 +89,7 @@
 
                     <div class="row">
                         <?php
-                                    include "db_helper.php";
-                        $id = $_GET['id'];
-                        echo $id;
+                        include "db_helper.php";
                         $select = "select * from items_list WHERE id = $_GET[id]";
                         $conn = OpenCon();
                         $items = mysqli_query($conn, $select);
@@ -99,25 +97,50 @@
                             while ($rows = mysqli_fetch_array($items, MYSQLI_ASSOC)) {
                                 ?>
 
-                                <div class="col-lg-3" data-aos="fade-up" >
-                                    <a href="bookdetail.php">
-                                        <div class="icon-box icon-box-pink" >
+                                <div class="col-xl-12" data-aos="fade-up" >
+                                    <div class="icon-box icon-box-pink" >
                                         <img src="<?php echo $rows['image_path']; ?>" height="200" width="200" alt="image of item"/>
                                         <h1 class="title"><?php echo $rows['item_name']; ?></h1>
                                         <p class="description"><?php echo $rows['description']; ?></p>
                                         <p class="description">$<?php echo $rows['price']; ?></p>
-                                        <?php echo "<a href='forumComments.php?id=".$rows['id']."'>Reply</a>" ; ?>
-                                    </div></a>
-                                    
+                                        <?php echo "<a href='forumComments.php?id=" . $rows['id'] . "'>Reply</a>"; ?>
+                                    </div>
+
                                 </div>
-                            <?php
+                                <?php
                             }
                         }
                         ?>
 
-</div>
                     </div>
+                    
+                    
+                    <div class="row"  >
+                            <div id="paypal-button-container-P-7YF52428BY641674SMIEMUWI" style="align-items: center"></div>
+                            <script src="https://www.paypal.com/sdk/js?client-id=AebQTHYqSrLkzSBiQeRGNDnx5jxbhSpRGU5-4Ekvi_QLRErQZhD9hezg_MZdMYOoyBJOgo_lpT-wJLt1&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+                            <script>
+                              paypal.Buttons({
+                                  style: {
+                                      shape: 'pill',
+                                      color: 'gold',
+                                      layout: 'horizontal',
+                                      label: 'subscribe'
+                                  },
+                                  createSubscription: function(data, actions) {
+                                    return actions.subscription.create({
+                                      /* Creates the subscription */
+                                      plan_id: 'P-7YF52428BY641674SMIEMUWI'
+                                    });
+                                  },
+                                  onApprove: function(data, actions) {
+                                    alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                                  }
+                              }).render('#paypal-button-container-P-7YF52428BY641674SMIEMUWI'); // Renders the PayPal button
+                            </script>
+                        </div>
 
+                    
+                    
                 </div>
 
             </section><!-- End Services Section -->
