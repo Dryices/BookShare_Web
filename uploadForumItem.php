@@ -1,6 +1,6 @@
 <?php
 
-$mainid = null;
+$mainid = "NULL";
 
 include 'db_helper.php';
 //Prompt user to log in
@@ -41,7 +41,7 @@ if (isset($_POST["submit"]))
     
     if (empty($errors))
     {
-        $r = insertForumItem($title, $username, $content, null, $dbc);
+        $r = insertForumItem($title, $username, $content, $mainid, $dbc);
         
         if ($r)
         {

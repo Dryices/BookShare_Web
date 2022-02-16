@@ -78,6 +78,14 @@ function getGroupOfItemsOR ($conditionArray, $dbc)
     return $r;
 }
 
+//-----------------------announcements functions---------------------------
+
+function insertAnnouncement($imagepath, $dbc)
+{
+    $q = "INSERT INTO announcements (imagepath) VALUES ('$imagepath')";
+    
+}
+
 //make a function to print or return all results individually i guess
  
 //--------------------user_accounts functions------------------------
@@ -181,21 +189,11 @@ function getAllItems ($dbc)
 
 function insertForumItem ($title, $username, $content, $mainid, $dbc)
 {
-    $q = "INSERT INTO forum (title, username, content, timestamp, mainid) VALUES ('$title',"
-            . " '$username', '$content', CURRENT_TIMESTAMP, '$mainid')";
+    $q = "INSERT INTO forum (title, username, content, timestamp, mainid) VALUES ($title,"
+            . " '$username', '$content', CURRENT_TIMESTAMP, $mainid)";
     $r = @mysqli_query($dbc, $q);
     
     return $r;
-}
-
-function getID($dbc)
-{
-    
-}
-
-function SetMainID()
-{
-    
 }
 
 function getAllForumItems ($dbc)

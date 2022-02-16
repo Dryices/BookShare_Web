@@ -1,5 +1,7 @@
 <?php
 
+$title = "NULL";
+
 include 'db_helper.php';
 //Prompt user to log in
 session_start();
@@ -38,7 +40,7 @@ if (isset($_POST['submit']))
     
     if (empty($errors))
     {
-        $r = insertForumItem(null, $username, $content, $mainid, $dbc);
+        $r = insertForumItem($title, $username, $content, $mainid, $dbc);
         
         if ($r)
         {
