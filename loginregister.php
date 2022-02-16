@@ -62,7 +62,7 @@
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
@@ -102,7 +102,7 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" id='email' name="email" placeholder="Enter your email" required>
+                <input type="email" id='email' name="email" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>

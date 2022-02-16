@@ -118,9 +118,8 @@
 
                                 <div class="col-lg-3" data-aos="fade-up" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <div class="icon-box icon-box-pink" >
-                                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                                        <img src="<?php echo $rows['image_path']; ?>" alt="stupidyiquan"/>
-                                        <h4 class="title"><?php echo $rows['item_name']; ?></h4>
+                                        <img src="<?php echo $rows['image_path']; ?>" height="200" width="200" alt="image of item"/>
+                                        <h1 class="title"><?php echo $rows['item_name']; ?></h1>
                                         <p class="description"><?php echo $rows['description']; ?></p>
                                         <p class="description">$<?php echo $rows['price']; ?></p>
                                     </div>
@@ -129,8 +128,8 @@
                             }
                         }
                         ?>
-
-                        <!-- Container for the image gallery --> <!<!-- testing new gallery -->
+                        
+                          <!-- Container for the image gallery --> <!<!-- testing new gallery -->
                         
                         <div class="container">
                             <div class="mySlides">
@@ -192,6 +191,7 @@
                                 </div>
                             </div>
                         </div>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl" >
