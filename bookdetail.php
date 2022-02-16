@@ -80,25 +80,8 @@
         </section><!-- End Hero -->
 
         <main id="main">
-            <?php
-            include "db_helper.php";
+            
 
-            $select = "select * from items_list";
-            ?>   
-
-            <div class="container">
-                <div class="row height d-flex justify-content-center align-items-center">
-                    <div class="col-md-6">
-                        <div class="form"> 
-                            <i class="fa fa-search"></i> <form class="d-flex justify-content-center" action="index.php" method="post">
-                                <input name="search" id="search" type="text" class="form-control form-input" placeholder="Search anything...">
-                                <input type="submit" class="btn btn-primary" value="Search">
-                            </form>
-                            <span class="left-pan"><i class="fa fa-microphone"></i></span> 
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- ======= Services Section ======= -->
             <section class="services">
@@ -106,10 +89,10 @@
 
                     <div class="row">
                         <?php
-                        if (isset($_POST['search'])) {
-                            $search = $_POST['search'];
-                            $select = "SELECT * FROM `items_list` WHERE item_name LIKE '%" . $search . "%' OR description LIKE '%" . $search . "%'";
-                        }
+                                    include "db_helper.php";
+                        $id = $_GET['id'];
+                        echo $id;
+                        $select = "select * from items_list WHERE id = $_GET[id]";
                         $conn = OpenCon();
                         $items = mysqli_query($conn, $select);
                         if (mysqli_num_rows($items) > 0) {
@@ -117,13 +100,14 @@
                                 ?>
 
                                 <div class="col-lg-3" data-aos="fade-up" >
+                                    <a href="bookdetail.php">
                                         <div class="icon-box icon-box-pink" >
                                         <img src="<?php echo $rows['image_path']; ?>" height="200" width="200" alt="image of item"/>
                                         <h1 class="title"><?php echo $rows['item_name']; ?></h1>
                                         <p class="description"><?php echo $rows['description']; ?></p>
                                         <p class="description">$<?php echo $rows['price']; ?></p>
-                                        <?php echo "<a href='bookdetail.php?id=".$rows['id']."'>Reply</a>" ; ?>
-                                    </div>
+                                        <?php echo "<a href='forumComments.php?id=".$rows['id']."'>Reply</a>" ; ?>
+                                    </div></a>
                                     
                                 </div>
                             <?php
@@ -138,38 +122,7 @@
 
             </section><!-- End Services Section -->
 
-            <!-- ======= Why Us Section ======= -->
-            <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
-                <div class="container">
-
-                    <div class="row">
-                        <div class="col-lg-6 video-box">
-                            <br>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xThlceHTduw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <br>
-                            <br>
-                        </div>
-
-                        <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
-
-                            <div class="icon-box">
-                                <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                                <h4 class="title"><a href="">Save trees!</a></h4>
-                                <p class="description">Since the beginning, trees have furnished us with two of life’s essentials, food and oxygen. As we evolved, they provided additional necessities such as shelter, medicine, and tools. Today, their value continues to increase and more benefits of trees are being discovered as their role expands to satisfy the needs created by our modern lifestyles.</p>
-                            </div>
-
-                            <div class="icon-box">
-                                <div class="icon"><i class="bx bx-gift"></i></div>
-                                <h4 class="title"><a href="">Why?</a></h4>
-                                <p class="description">Trees have supported and sustained life throughout our existence. They have a wide variety of practical and commercial uses. Wood was the very first fuel, and is still used for cooking and heating by about half of the world’s population. Trees provide timber for building construction, furniture manufacture, tools, sporting equipment, and thousands of household items. Wood pulp is used to make paper.</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </section><!-- End Why Us Section -->
-
+            
 
 
         </main><!-- End #main -->
