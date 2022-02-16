@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 16, 2022 at 07:44 AM
+-- Generation Time: Feb 16, 2022 at 01:33 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -55,14 +55,20 @@ CREATE TABLE IF NOT EXISTS `cookies` (
 DROP TABLE IF EXISTS `forum`;
 CREATE TABLE IF NOT EXISTS `forum` (
   `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `category` varchar(20) NOT NULL,
   `title` varchar(100) NOT NULL,
   `username` varchar(20) NOT NULL,
   `content` varchar(50000) NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `mainid` mediumint(8) UNSIGNED NOT NULL,
+  `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `mainid` mediumint(8) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forum`
+--
+
+INSERT INTO `forum` (`id`, `title`, `username`, `content`, `timestamp`, `mainid`) VALUES
+(3, 'wesrdt', 'John Doe', 'awesrdt', '2022-02-16 21:13:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -79,7 +85,18 @@ CREATE TABLE IF NOT EXISTS `items_list` (
   `username` varchar(20) NOT NULL,
   `image_path` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `items_list`
+--
+
+INSERT INTO `items_list` (`id`, `item_name`, `description`, `price`, `username`, `image_path`) VALUES
+(5, 'qjwie', 'qwe', 12, 'John Doe', 'itemImages/infoBlack.png'),
+(4, 'help', 'sos', 505, 'John Doe', 'itemImages/'),
+(6, 'help', 'sos', 505, 'John Doe', 'itemImages/infoBlack.png'),
+(7, 'thing', 'help', 505, 'John Doe', 'itemImages/infoBlack.png'),
+(8, 'qwe', 'qwert', 1, 'John Doe', 'itemImages/infoBlack.png');
 
 -- --------------------------------------------------------
 

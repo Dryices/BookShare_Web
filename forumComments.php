@@ -81,7 +81,6 @@
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i><?php echo $rows['username']; ?></a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01"><?php echo $rows['timestamp']; ?></time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i><?php echo $rows['isComment']; ?></a></li>
                 </ul>
               </div>
 
