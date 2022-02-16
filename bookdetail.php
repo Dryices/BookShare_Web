@@ -115,8 +115,8 @@
                     </div>
                     
                     
-                    <div class="row"  >
-                            <div id="paypal-button-container-P-7YF52428BY641674SMIEMUWI" style="align-items: center"></div>
+                    <div class="row" >
+                            <div id="paypal-button-container-P-7YF52428BY641674SMIEMUWI" class="text-center"></div>
                             <script src="https://www.paypal.com/sdk/js?client-id=AebQTHYqSrLkzSBiQeRGNDnx5jxbhSpRGU5-4Ekvi_QLRErQZhD9hezg_MZdMYOoyBJOgo_lpT-wJLt1&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
                             <script>
                               paypal.Buttons({

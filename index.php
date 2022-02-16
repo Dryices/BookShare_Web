@@ -35,6 +35,8 @@
 
         <?php include "header.php";
         ?>
+        
+        
 
         <!-- ======= Hero Section ======= -->
         <section id="hero" class="d-flex justify-cntent-center align-items-center">
@@ -78,6 +80,27 @@
 
             </div>
         </section><!-- End Hero -->
+        
+         </section><!-- End Services Section -->
+
+            <!-- ======= Announcement Section======= -->
+            <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+                <div class="container flex-column justify-cntent-center">
+
+                    <div class="row">
+                        <div class="col-lg-4  justify-content-center">
+                            <br>
+                            <img src="#" id="announcement" name="announcement" height="300px" width="1000px">
+                            <br>
+                            <br>
+                        </div>
+
+                    
+                    </div>
+
+                </div>
+            </section><!-- End of Announcement Section -->
+
 
         <main id="main">
             <?php
