@@ -3,11 +3,13 @@
 // Include the database configuration file  
 include 'db_helper.php';
 //Prompt user to log in
+session_start();
 while(!isset($_SESSION['username'])){ 
   echo ("<script LANGUAGE='JavaScript'>
     window.alert('Please log in to list an item');
-    window.location.href='listitem.php';
+    window.location.href='loginregister.php';
     </script>");
+  exit();
 }
  
 // If file upload form is submitted  

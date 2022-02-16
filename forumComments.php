@@ -34,6 +34,8 @@
      <?php include "header.php";
 ?>
     
+    
+    
   <main id="main">
 
     <!-- ======= Blog Section ======= -->
@@ -41,25 +43,25 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Blog</h2>
+          <h2>Comments</h2>
 
           <ol>
              <li><a class="" href="index.php">Home</a></li>
-            <li>Blog</li>
+            <li>Comments</li>
           </ol>
         </div>
 
       </div>
     </section><!-- End Blog Section -->
+    
+    
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog d-flex justify-content-center">
       <div class="row container" data-aos="fade-up">
-          <div class="col-lg-8">
+          <div class="col-lg-12">
               <div class="entries">
-                  <form action="listPost.php" >
-        <input type="submit" class="btn btn-primary" value="Add post">
-    </form>
+   
             <?php
             include "db_helper.php";
             echo "<div class='container'>";
@@ -77,43 +79,56 @@
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><a href="blog-single.html"><i class="bi bi-person"></i><?php echo $rows['username']; ?></a></li>
-                  <li class="d-flex align-items-center"><a href="blog-single.html"><i class="bi bi-clock"></i><a href="blog-single.html"><time datetime="2020-01-01"><?php echo $rows['timestamp']; ?></time></a></li>
-                  <li class="d-flex align-items-center"><a href="blog-single.html"><i class="bi bi-chat-dots"></i><?php echo $rows['isComment']; ?></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i><?php echo $rows['username']; ?></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01"><?php echo $rows['timestamp']; ?></time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i><?php echo $rows['isComment']; ?></a></li>
                 </ul>
               </div>
 
               <div class="entry-content">
                 <p><?php echo $rows['content']; ?></p>
-                <div class="read-more">
-                  <a href="forumComments.php">Reply</a>
-                </div>
               </div>
-               
+                <br>
+                <div class="form">
+                <form action="#"  method="post">
+
+<textarea id="comment" name="comment" rows="10" cols="50"> </textarea>
+<input type="submit" class="btn btn-primary" value="Submit">
+</form>
+                </div>
 
             </article><!-- End blog entry -->
             <?php } } ?>
             </div>
           </div><!-- End blog entries list -->
-          </div>
-          <div class="col-lg-4">
+  
+            <?php
+            echo "<div class='container'>";
+            $select = "select * from forum";
+            $conn = OpenCon();
+            $posts = mysqli_query($conn, $select);
+            if(mysqli_num_rows($posts) > 0){
+                while($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC)){ ?>
+            <article class="entry">
 
-            <div class="sidebar">
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i><?php echo $rows['username']; ?></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01"><?php echo $rows['timestamp']; ?></time></a></li>
+                </ul>
+              </div>
 
-              <h3 class="sidebar-title">Search</h3>
-              <div class="sidebar-item search-form">
-                <form name="searchPost" id="searchPost" action="index.php" method="post">
-                  <input type="text">
-                  <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
-              </div><!-- End sidebar search formn-->
+              <div class="entry-content">
+                <p><?php echo $rows['content']; ?></p>
+              </div>
 
-             
-              </div><!-- End sidebar tags-->
-
-            </div><!-- End sidebar -->
-
+            </article><!-- End blog entry -->
+            <?php } } ?>
+       
     </section><!-- End Blog Section -->
+    
+     
+    
 
   </main><!-- End #main -->
 
