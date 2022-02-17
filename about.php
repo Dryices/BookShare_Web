@@ -110,6 +110,31 @@ From 2001 to 2019, a total of 386 million hectares of forest were lost globally 
 
       </div>
     </section><!-- End Facts Section -->
+    
+    <?php
+            include "db_helper.php";
+            $sum = 0;
+            echo "<div class='container'>";
+            $selectfivestar = "select * from website_feedback where rating='5'";
+            $selectall = "select * from website_feedback";
+            $conn = OpenCon();
+            $fivestar = mysqli_query($conn, $selectfivestar);
+            $all = mysqli_query($conn, $selectall);
+            
+            $sum = mysqli_num_rows($fivestar);
+            $allnum = mysqli_num_rows($all);
+            
+            if ($allnum != 0)
+            {
+                $percent = ($sum / $allnum) * 100;
+                $percent = round($percent, 0);
+            }
+            else
+            {
+                $percent = 0;
+            }
+            CloseCon($conn);
+                    ?>
 
     <!-- ======= Our Skills Section ======= -->
     <section class="skills" data-aos="fade-up">
@@ -124,16 +149,12 @@ From 2001 to 2019, a total of 386 million hectares of forest were lost globally 
 
           <div class="progress">
               
-            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">5 Star Reviews<i class="val">100%</i></span>
+              
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="<?php echo $percent; ?>" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">5 Star Reviews<i class="val"><?php echo $percent; ?>%</i></span>
             </div>
           </div>
 
-          <div class="progress">
-            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">Course notes<i class="val">100%</i></span>
-            </div>
-          </div>
         </div>
 
       </div>
