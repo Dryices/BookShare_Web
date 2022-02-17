@@ -53,8 +53,9 @@
             </section><!-- End Blog Section -->
             <?php
             include "db_helper.php";
+            $username = $_SESSION['username'];
 
-            $select = "select * from items_list";
+            $select = "select * from items_list where username='$username'";
             
             $userid = $_SESSION['user_id'];
             $selectuser = "select * from user_accounts where id = '$userid'";
@@ -101,7 +102,8 @@
                         <?php
                         if (isset($_POST['search'])) {
                             $search = $_POST['search'];
-                            $select = "SELECT * FROM `items_list` WHERE item_name LIKE '%" . $search . "%' OR description LIKE '%" . $search . "%'";
+                            
+                            $select = "SELECT * FROM `items_list` WHERE (item_name LIKE '%" . $search . "%' OR description LIKE '%" . $search . "%') AND username='$username'";
                         }
                         $conn = OpenCon();
                         $items = mysqli_query($conn, $select);

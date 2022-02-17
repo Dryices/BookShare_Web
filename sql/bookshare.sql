@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 17, 2022 at 01:53 AM
+-- Generation Time: Feb 17, 2022 at 02:13 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -57,7 +57,20 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `mainid` mediumint(8) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forum`
+--
+
+INSERT INTO `forum` (`id`, `title`, `username`, `content`, `timestamp`, `mainid`) VALUES
+(20, NULL, 'Marcus Tan', ' awsdfgh\r\n', '2022-02-17 10:05:33', 18),
+(19, NULL, 'John Doe', ' ghvjbkn\r\n', '2022-02-17 10:03:06', 18),
+(18, 'serxfcgvhjn', 'John Doe', 'xfcghvjbn', '2022-02-17 10:02:59', NULL),
+(17, NULL, 'John Doe', ' rdfghj', '2022-02-17 10:02:46', 15),
+(16, NULL, 'John Doe', ' drrcgvhjbkkm\r\n', '2022-02-17 10:02:18', 15),
+(15, 'sredtfghj', 'John Doe', 'rcgvhbjn', '2022-02-17 10:02:12', NULL),
+(14, 'ahhhhhhhhhhh', 'John Doe', 'heeeeeeeeeeeeeeelp', '2022-02-17 10:02:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -74,7 +87,15 @@ CREATE TABLE IF NOT EXISTS `items_list` (
   `username` varchar(20) NOT NULL,
   `image_path` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `items_list`
+--
+
+INSERT INTO `items_list` (`id`, `item_name`, `description`, `price`, `username`, `image_path`) VALUES
+(10, 'wserdtftgh', 'esrdfgh', 1234, 'John Doe', 'itemImages/image 3.png'),
+(9, 'help me please', 'sos', 505, 'John Doe', 'itemImages/phisherman.png');
 
 -- --------------------------------------------------------
 
@@ -88,9 +109,22 @@ CREATE TABLE IF NOT EXISTS `user_accounts` (
   `username` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` char(40) NOT NULL,
-  `profile_picture` varchar(1000) NOT NULL,
+  `profile_picture` varchar(1000) DEFAULT NULL,
+  `datecreated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_accounts`
+--
+
+INSERT INTO `user_accounts` (`id`, `username`, `email`, `password`, `profile_picture`, `datecreated`) VALUES
+(3, 'John Doe', 'johndoe12345@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', 'profilepics/infoBlack.png', '2022-02-17 10:06:24'),
+(4, 'Joseph', 'joseph@joseph.com', '92005ecf3788faea8346a7919fba0232188561ab', NULL, '2022-02-17 10:06:24'),
+(5, 'Marcus Tan', 'marcustan@123.com', '8cb2237d0679ca88db6464eac60da96345513964', 'profilepics/loading.png', '2022-02-17 10:06:24'),
+(6, 'Help Me', 'help@help.com', '70ffc281dbec8dacf4e02e879c6e20a93b1acd59', NULL, '2022-02-17 10:06:24'),
+(7, 'AHHHHH', 'ah@help.com', '8cb2237d0679ca88db6464eac60da96345513964', NULL, '2022-02-17 10:06:24'),
+(8, 'Yiquan', 'yiquan@sucks.haha.com', '8cb2237d0679ca88db6464eac60da96345513964', NULL, '2022-02-17 10:07:53');
 
 -- --------------------------------------------------------
 
