@@ -154,7 +154,8 @@
                                 <div class="col-lg-3" data-aos="fade-up" >
                                         <div class="icon-box icon-box-pink" >
                                         <img src="<?php echo $rows['image_path']; ?>" height="200" width="200" alt="image of item"/>
-                                        <h1 class="title"><?php echo $rows['item_name']; ?></h1>
+                                        <h4 class="title"><?php echo $rows['username']; ?></h4>
+                                        <h3 class="title"><?php echo $rows['item_name']; ?></h3>
                                         <p class="description"><?php echo $rows['description']; ?></p>
                                         <p class="description">$<?php echo $rows['price']; ?></p>
                                         <?php echo "<a href='bookdetail.php?id=".$rows['id']."'>Details</a>" ; ?>
