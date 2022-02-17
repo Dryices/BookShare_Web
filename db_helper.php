@@ -191,8 +191,8 @@ function getItemReviewByUser ($username, $dbc)
 
 function insertItem ($item_name, $description, $price, $image_path, $username, $dbc)
 {
-    $q = "INSERT INTO items_list (item_name, description, price, image_path, username) VALUES ('$item_name', '$description', "
-        . "'$price', '$image_path', '$username')"; 
+    $q = "INSERT INTO items_list (item_name, description, price, image_path, username, dateCreated) VALUES ('$item_name', '$description', "
+        . "'$price', '$image_path', '$username', CURRENT_TIMESTAMP)"; 
     $r = @mysqli_query($dbc, $q);
     
     return $r;

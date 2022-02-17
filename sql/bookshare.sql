@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 17, 2022 at 02:18 AM
+-- Generation Time: Feb 17, 2022 at 02:29 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS `items_list` (
   `price` float NOT NULL,
   `username` varchar(20) NOT NULL,
   `image_path` varchar(1000) NOT NULL,
+  `dateCreated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
@@ -93,9 +94,9 @@ CREATE TABLE IF NOT EXISTS `items_list` (
 -- Dumping data for table `items_list`
 --
 
-INSERT INTO `items_list` (`id`, `item_name`, `description`, `price`, `username`, `image_path`) VALUES
-(10, 'wserdtftgh', 'esrdfgh', 1234, 'John Doe', 'itemImages/image 3.png'),
-(9, 'help me please', 'sos', 505, 'John Doe', 'itemImages/phisherman.png');
+INSERT INTO `items_list` (`id`, `item_name`, `description`, `price`, `username`, `image_path`, `dateCreated`) VALUES
+(10, 'wserdtftgh', 'esrdfgh', 1234, 'John Doe', 'itemImages/image 3.png', '2022-02-17 10:21:33'),
+(9, 'help me please', 'sos', 505, 'John Doe', 'itemImages/phisherman.png', '2022-02-17 10:21:33');
 
 -- --------------------------------------------------------
 
@@ -125,23 +126,6 @@ INSERT INTO `user_accounts` (`id`, `username`, `email`, `password`, `profile_pic
 (6, 'Help Me', 'help@help.com', '70ffc281dbec8dacf4e02e879c6e20a93b1acd59', NULL, '2022-02-17 10:06:24'),
 (7, 'AHHHHH', 'ah@help.com', '8cb2237d0679ca88db6464eac60da96345513964', NULL, '2022-02-17 10:06:24'),
 (8, 'Yiquan', 'yiquan@sucks.haha.com', '8cb2237d0679ca88db6464eac60da96345513964', NULL, '2022-02-17 10:07:53');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_reviews`
---
-
-DROP TABLE IF EXISTS `user_reviews`;
-CREATE TABLE IF NOT EXISTS `user_reviews` (
-  `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `itemName` varchar(100) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `review` varchar(10000) NOT NULL,
-  `rating` float NOT NULL,
-  `item_id` mediumint(8) UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

@@ -123,8 +123,9 @@ From 2001 to 2019, a total of 386 million hectares of forest were lost globally 
         <div class="skills-content">
 
           <div class="progress">
+              
             <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">Books<i class="val">100%</i></span>
+              <span class="skill">5 Star Reviews<i class="val">100%</i></span>
             </div>
           </div>
 
