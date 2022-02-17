@@ -55,17 +55,30 @@
             include "db_helper.php";
 
             $select = "select * from items_list";
-            ?>   
             
-            <!-- profile picture -->
-            <div class="text-center">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="profilepic.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="500" height="500" class="rounded-circle">
-                </a>
-            </li>  
-            </div>
+            $userid = $_SESSION['user_id'];
+            $selectuser = "select * from user_accounts where id = '$userid'";
 
+            $conn = OpenCon();
+            $posts = mysqli_query($conn, $selectuser);
+            if (mysqli_num_rows($posts) > 0) {
+                $i = 0;
+                while ($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC)) {
+                    ?>   
+
+                    <!-- profile picture -->
+                    <div class="text-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="profilepic.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="<?php echo $rows['profile_picture']; ?>" width="500" height="500" class="rounded-circle">
+                            </a>
+                        </li>  
+                    </div>
+                <?php
+                }
+                CloseCon($conn);
+            }
+            ?>
             <div class="container">
                 <div class="row height d-flex justify-content-center align-items-center">
                     <div class="col-md-6">

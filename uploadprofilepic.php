@@ -12,35 +12,53 @@ while(!isset($_SESSION['username'])){
   exit();
 }
 
-$user = $_SESSION['user_id'];
-
-$dbhost = "localhost";
- $dbuser = "root";
- $dbpass = "";
- $dbname = "bookshare";
- $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname) or die('Could not connect to MySQL: ' . mysqli_connect_error() );
+$userid = $_SESSION['user_id'];
 
 if (isset($_FILES['file'])) {
-        $targetDir = "itemImages";
+    $conn = OpenCon();
+    $errors = array();
+    
+        $targetDir = "profilepics/";
         $fileName = basename($_FILES["file"]["name"]);
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
-            $stmt = $conn->prepare("UPDATE user_accounts SET profile_picture = ? WHERE id = ?"); 
-            $stmt->bind_param("ss", $fileName, $user);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $stmt->close();
+            $r = setProfilePic($targetFilePath, $userid, $conn);
+            
+            if ($r)
+            {
+                header("Location: userListings.php?status=$userid");
+                CloseCon($conn);
+                exit();
+            }
+            else
+            {
+                header("Location: userListings.php?status=fail");
+                CloseCon($conn);
+                exit();
+            }
         } else {
-            $fileName = "default.png";
-            $stmt = $conn->prepare("UPDATE user_accounts SET profile_picture = ? WHERE id = ?"); 
-            $stmt->bind_param("ss", $fileName, $user);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $stmt->close();
+            $r = setProfilePic("default.png", $userid, $dbc);
+            
+            if ($r)
+            {
+                header("Location: userListings.php?status=fail&pic=default");
+                CloseCon($conn);
+                exit();
+            }
+            else
+            {
+                header("Location: userListings.php?status=fail&pic=fail");
+                CloseCon($conn);
+                exit();
+            }
         }
     }
-    exit();
+    else
+    {
+        header ("Location: userListings.php");
+        exit();
+    }
 
 ?>

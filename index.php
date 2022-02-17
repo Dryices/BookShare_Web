@@ -97,7 +97,7 @@
             $posts = mysqli_query($conn, $image);
             if(mysqli_num_rows($posts) > 0){
                 $i = 0;
-                while(($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC))){
+                while($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC)){
                     ?>
                     <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
                         <div class="container">

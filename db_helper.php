@@ -134,6 +134,15 @@ function getAccFromUsername ($username, $dbc)
     //the data pointer ahead to the next row. When all rows are traversed, it returns false and the while loop ends.
 }
 
+function setProfilePic($targetFilePath, $userid, $dbc)
+{
+    $q = "UPDATE user_accounts SET profile_picture = '$targetFilePath' WHERE id = '$userid'";
+    
+    $r = @mysqli_query($dbc, $q);
+    
+    return $r;
+}
+
 function getAccFromEmail ($email, $dbc)
 {
     $q = "SELECT * FROM user_accounts WHERE email = '$email'";
