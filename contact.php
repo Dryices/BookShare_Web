@@ -157,7 +157,7 @@
                         <div class="col-lg-6">
                             
                                 <div class="row">
-                                    <form action="uploadReview.php" method="post" role="form" class="php-email-form">
+                                    <form action="uploadReview.php" method="post" role="form" >
              
                                 <div class="form-group mt-3">
                                     <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
@@ -199,7 +199,7 @@
                                             </label>
 
                                 </div>
-                                <div class="text-center"><button type="submit">Send Message</button></div>
+                                        <div class="text-center"><input type="submit" name="submit" id="submit" value="Submit"></div>
                             </form>
                         </div>
 

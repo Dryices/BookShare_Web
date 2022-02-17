@@ -19,7 +19,7 @@ if (isset($_POST['submit']))
     $dbc = OpenCon();
     $errors = array();
     
-    if (!empty($_POST['feedback']))
+    if (!empty($_POST['message']))
     {
         $feedback = $_POST['feedback'];
     }
@@ -67,11 +67,20 @@ if (isset($_POST['submit']))
             }
             else if (i > 0)
             {
-                $headerMsg = $headerMsg . "&&error" . $i . "=" . $errors[$i];
+                $headerMsg = $headerMsg . "&error" . $i . "=" . $errors[$i];
             }
             $i++;
         }
+        
+        header ($headerMsg);
+        CloseCon($dbc);
+        exit();
     }
+}
+else
+{
+    header ("Location: contact.php?hi=hi");
+    exit();
 }
 /* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
