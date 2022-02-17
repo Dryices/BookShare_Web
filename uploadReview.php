@@ -21,7 +21,7 @@ if (isset($_POST['submit']))
     
     if (!empty($_POST['message']))
     {
-        $feedback = $_POST['feedback'];
+        $feedback = $_POST['message'];
     }
     else
     {
