@@ -101,10 +101,10 @@
                     ?>
                     <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
                         <div class="container">
-
+<div class="text-center">
                      <img src="<?php echo $rows['imagepath']; ?>" height="200" width="200" alt="image of item"/>
                      <p>Sell your books at a low price!</p>
-                         </div>
+</div></div>
                     </section>           
                   <?php }
               } ?>
