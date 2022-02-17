@@ -92,11 +92,12 @@
             <?php
             include "db_helper.php";
             echo "<div class='container'>";
-            $image = "select * from announcements";
+            $image = "select * from announcements order by RAND() LIMIT 1";
              $conn = OpenCon();
             $posts = mysqli_query($conn, $image);
             if(mysqli_num_rows($posts) > 0){
-                while($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC)){
+                $i = 0;
+                while(($rows = mysqli_fetch_array($posts, MYSQLI_ASSOC))){
                     ?>
                     <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
                         <div class="container">
