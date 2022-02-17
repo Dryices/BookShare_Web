@@ -103,7 +103,7 @@
                                         <h1 class="title"><?php echo $rows['item_name']; ?></h1>
                                         <p class="description"><?php echo $rows['description']; ?></p>
                                         <p class="description">$<?php echo $rows['price']; ?></p>
-                                        <?php echo "<a href='forumComments.php?id=" . $rows['id'] . "'>Reply</a>"; ?>
+                                       
                                     </div>
 
                                 </div>
